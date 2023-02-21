@@ -1,6 +1,21 @@
 # Data-Base-Ruangan-IPB
 
-Merancang ERD dan membuat database 
+## Anggota Kelompok
+
+1. Nadira Nisa Alwani  (G1501222048) : Data Manager
+2. Ahmad Syauqi        (G1501221019) : Shiny Developer
+3. Yully Sofyah Waode  (G1501222056) : Shiny Developer
+4. Merryanty Lestari P (G1501221022) : Technical Writer
+
+
+## Skema
+<img width="334" alt="Skema-DB-Ruangan" src="https://user-images.githubusercontent.com/111562115/220268891-d6e9f951-5dc0-42e2-9200-01b462c49f55.png">
+
+
+## Entity-Relationship Diagram
+![ERD-Ruangan-IPB](https://user-images.githubusercontent.com/111562115/220268632-59166ed8-f0ea-4976-a106-2928977a14f4.png)
+
+## Sintax Rancangan Database
 
 Tabel Fakultas
 ```sql
@@ -13,7 +28,6 @@ CREATE TABLE IF NOT EXISTS public.fakultas (
 ```
 
 Tabel Ruangan
-
 ```sql
 CREATE TABLE IF NOT EXISTS public.ruangan (
     Kode_RG character varying(25) NOT NULL,
@@ -24,7 +38,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan (
 );
 ```
 
-Jadwal Kuliah
+Tabel Jadwal Kuliah
 ```sql
 CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
     Kode_MK character varying(10) NOT NULL,
@@ -34,7 +48,7 @@ CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
 );
 ```
 
-Mata Kuliah
+Tabel Mata Kuliah
 ```sql
 CREATE TABLE IF NOT EXISTS public.Mata_Kuliah (
     Kode_MK character varying(10) NOT NULL,
@@ -71,7 +85,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan_mk(
         REFERENCES public.ruangan (Kode_RG) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT ruangan_mk_fkey FOREIGN KEY (Kode_MK)
+    CONSTRAINT ruangan_mk_kode_MK_fkey FOREIGN KEY (Kode_MK)
         REFERENCES public.Jadwal_Kuliah (Kode_MK) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
@@ -82,13 +96,12 @@ Jadwal_untuk_MK
 ```sql
 CREATE TABLE IF NOT EXISTS public.Jadwal_untuk_MK(
     Kode_MK character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    Kode_MK character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT Jadwal_untuk_MK_pkey PRIMARY KEY (Kode_MK,Kode_MK),
+    CONSTRAINT Jadwal_untuk_MK_pkey PRIMARY KEY (Kode_MK),
     CONSTRAINT Jadwal_untuk_MK_fkey FOREIGN KEY (Kode_MK)
         REFERENCES public.Jadwal_Kuliah (Kode_MK) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT Jadwal_untuk_MK_fkey FOREIGN KEY (Kode_MK)
+    CONSTRAINT Jadwal_untuk_MK_kode_MK_fkey FOREIGN KEY (Kode_MK)
         REFERENCES public.Mata_Kuliah (Kode_MK) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
