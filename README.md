@@ -3,7 +3,7 @@
 Merancang ERD dan membuat database 
 
 Tabel Fakultas
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.fakultas (
     Kode_Fk character varying(2) NOT NULL,
     Nm_Fk text NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS public.fakultas (
 
 Tabel Ruangan
 
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.ruangan (
     Kode_RG character varying(25) NOT NULL,
     Nm_RG text NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan (
 ```
 
 Jadwal Kuliah
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
     Kode_MK character varying(10) NOT NULL,
     Jadwal text NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
 ```
 
 Mata Kuliah
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.Mata_Kuliah (
     Kode_MK character varying(10) NOT NULL,
     Nm_MK text NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS public.Mata_Kuliah (
 ```
 
 Ruangan di Fakultas
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.ruangan_di_fakultas(
     Kode_Fk character varying(2) COLLATE pg_catalog."default" NOT NULL,
     Kode_RG character varying(25) COLLATE pg_catalog."default" NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan_di_fakultas(
 ```
 
 Ruangan_Mk
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.ruangan_mk(
     Kode_RG character varying(25) COLLATE pg_catalog."default" NOT NULL,
     Kode_MK character varying(10) COLLATE pg_catalog."default" NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan_mk(
 ```
 
 Jadwal_untuk_MK
-```{r}
+```sql
 CREATE TABLE IF NOT EXISTS public.Jadwal_untuk_MK(
     Kode_MK character varying(10) COLLATE pg_catalog."default" NOT NULL,
     Kode_MK character varying(10) COLLATE pg_catalog."default" NOT NULL,
