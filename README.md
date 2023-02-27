@@ -1,5 +1,6 @@
 # Data-Base-Ruangan-IPB
 Deskripsi Database Ruangan IPB
+
 Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
 
 
@@ -21,8 +22,11 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ## Sintax Rancangan Database
 
 Tabel Fakultas
+
 Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yang nantinya akan dihubungan dengan tabel ruangan untuk mengetahui lokasi ruangan berdasarkan fakultas.
+
 Primary Key: Kode Fakultas
+
 Foreign Key: Kode Fakultas
 
 ```sql
