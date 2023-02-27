@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan (
 
 Tabel Jadwal Kuliah
 
-Tabel ini menyimpan data kode mata kuliah, jadwal, kode ruangan, dan peserta. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan siswa dalam mencari ruangan belajar.
+Tabel ini menyimpan data kode mata kuliah, jadwal, kode ruangan, dan peserta. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
 
 Primary Key: Kode Matakuliah
 
