@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS public.fakultas (
 ```
 
 Tabel Ruangan
+
 Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, dan kode fakultas. Tabel ini bertujuan untuk mengetahui lokasi suatu ruangan di IPB yang dicari berdasarkan jadwal kuliah dan kode ruangan.
+
 Primary Key: Kode Ruangan
 
 ```sql
@@ -53,8 +55,11 @@ CREATE TABLE IF NOT EXISTS public.ruangan (
 ```
 
 Tabel Jadwal Kuliah
+
 Tabel ini menyimpan data kode mata kuliah, jadwal, kode ruangan, dan peserta. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan siswa dalam mencari ruangan belajar.
+
 Primary Key: Kode Matakuliah
+
 Foreign Key: Kode Ruangan
 
 ```sql
@@ -67,8 +72,11 @@ CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
 ```
 
 Tabel Mata Kuliah
+
 Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata kuliah. Tabel ini bertujuan untuk memberikan informasi mata kuliah yang nantinya akan dihubungkan dengan tabel jadwal kuliah.
+
 Primary Key: Kode Mata Kuliah
+
 Foreign Key: Kode Mata Kuliah
 
 ```sql
@@ -81,6 +89,7 @@ CREATE TABLE IF NOT EXISTS public.Mata_Kuliah (
 ```
 
 Ruangan di Fakultas
+
 Tabel ini merupakan tabel pivot yang menghubungkan Tabel Fakultas dan Tabel Ruangan dengan relation many-to-many. Satu Fakultas dapat berisi banyak ruangan, dan satu ruangan dapat digunakan oleh banyak Fakultas. Tabel ini bertujuan untuk mengetahui suatu ruangan terdapat pada Fakultas tertentu.
 
 ```sql
@@ -100,6 +109,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan_di_fakultas(
 ```
 
 Ruangan_Mk
+
 Tabel ini merupakan tabel pivot yang menghubungkan Tabel Ruangan dan Tabel Jadwal Kuliah dengan relation one-to-one. Satu ruangan pada waktu tertentu hanya dapat digunakan oleh satu jadwal kuliah. Tabel ini bertujuan untuk mengetahui lokasi ruangan belajar berdasarkan jadwal kuliah.
 
 ```sql
@@ -119,6 +129,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan_mk(
 ```
 
 Jadwal_untuk_MK
+
 Tabel ini merupakan tabel pivot yang menghubungkan Tabel Jadwal Kuliah dan Mata Kuliah dengan relation one-to-many. Jadwal kuliah dapat terdiri dari beberapa mata kuliah, dan satu mata kuliah hanya memiliki satu jadwal kuliah. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah berdasarkan mata kuliah.
 
 ```sql
