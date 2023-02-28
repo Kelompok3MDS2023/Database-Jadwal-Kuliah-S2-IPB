@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS public.ruangan (
     Nm_RG text NOT NULL,
     Lokasi text NOT NULL,
     Kapasitas integer NOT NULL,
+    Kode_FK character varying(2) NOT NULL,
     PRIMARY KEY (Kode_RG)
 );
 ```
