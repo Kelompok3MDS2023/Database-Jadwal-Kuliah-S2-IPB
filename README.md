@@ -7,8 +7,8 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ## Anggota Kelompok
 
 1. Nadira Nisa Alwani  (G1501222048) : Data Manager
-2. Ahmad Syauqi        (G1501221019) : Shiny Developer
-3. Yully Sofyah Waode  (G1501222056) : Shiny Developer
+2. Ahmad Syauqi        (G1501221019) : Shiny Developer (back-end)
+3. Yully Sofyah Waode  (G1501222056) : Shiny Developer (front-end)
 4. Merryanty Lestari P (G1501221022) : Technical Writer
 
 
