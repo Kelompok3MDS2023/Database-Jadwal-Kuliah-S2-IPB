@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
     Kode_MK character varying(10) NOT NULL,
     Jadwal text NOT NULL,
     Peserta integer NOT NULL,
+    Kode_RG character varying(25) NOT NULL,
     PRIMARY KEY (Kode_MK)
 );
 ```
