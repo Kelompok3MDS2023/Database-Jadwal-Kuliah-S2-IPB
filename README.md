@@ -13,11 +13,10 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 
 
 ## Skema
-<img width="334" alt="Skema-DB-Ruangan" src="https://user-images.githubusercontent.com/111562115/220268891-d6e9f951-5dc0-42e2-9200-01b462c49f55.png">
-
+[Skema Diagram.docx](https://github.com/Kelompok3MDS2023/Data-Base-Ruangan-IPB/files/10898577/Skema.Diagram.docx)
 
 ## Entity-Relationship Diagram
-![ERD-Ruangan-IPB](https://user-images.githubusercontent.com/111562115/220268632-59166ed8-f0ea-4976-a106-2928977a14f4.png)
+![ERD-Ruangan-IPB-update](https://user-images.githubusercontent.com/111562803/223121412-cc786b72-c04d-4803-864e-46770991e971.png)
 
 ## Sintax Rancangan Database
 
