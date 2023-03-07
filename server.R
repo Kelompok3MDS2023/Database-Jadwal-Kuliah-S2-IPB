@@ -1,16 +1,31 @@
+# Local database
 connectDB <- function(){
   driver <- dbDriver('PostgreSQL')
   
-  # 1. set connection to ElephantSQL server database
   DB <- dbConnect(
-    driver,
-    dbname="srsttvfb", # User & Default database
-    host="topsy.db.elephantsql.com", # Server
-    # port=5433,
-    user="srsttvfb", # User & Default database
-    password="TLaAq8YtYIw6OXrnpcJRERsgE6MspeOn" # Password
+    driver, 
+    dbname="ruangan-IPB", 
+    host="localhost",
+    port=5432,
+    user="postgres",
+    password="root"
   )
 }
+
+   
+# 1. set connection to ElephantSQL server database
+# connectDB <- function(){
+#   driver <- dbDriver('PostgreSQL')
+#   DB <- dbConnect(
+#     driver,
+#     dbname="srsttvfb", # User & Default database
+#     host="topsy.db.elephantsql.com", # Server
+#     # port=5433,
+#     user="srsttvfb", # User & Default database
+#     password="TLaAq8YtYIw6OXrnpcJRERsgE6MspeOn" # Password
+#   )
+#}
+
 
 function(input, output, session){
   output$tblFak <- renderDataTable({
@@ -38,52 +53,3 @@ function(input, output, session){
   })
 
 }
-
-# function(input, output, session){
-#   output$tblProdi <- renderDataTable({
-#     driver <- dbDriver('PostgreSQL')
-#     DB <- dbConnect(
-#       driver, dbname="RuanganIPB", host="localhost",port=5432,user="postgres", password="Cacadcdcuy5."
-#     )
-#     dbReadTable(DB, 'prodi')
-#   })
-# }
-# 
-# function(input,output,session){
-#   output$tblRuangan <- renderDataTable({
-#     driver <- dbDriver('PostgreSQL')
-# 
-#     # bangun koneksi ke DBMS
-#     DB <- dbConnect(
-#       driver, dbname="ruangan-IPB", host="localhost",port=5432,user="postgres", password="Cacadcdcuy5."
-#     )
-#     dbReadTable(DB,'Ruangan')
-# 
-# q <- "SELECT * FROM ;"
-# dbGetQuery(DB, q)
-# #   })
-# }
-# 
-# function(input,output,session){
-#   output$tblProdi <- renderDataTable({
-#     driver <- dbDriver('PostgreSQL')
-# 
-#     # bangun koneksi ke DBMS
-#     DB <- dbConnect(
-#       driver, dbname="ruangan-IPB", host="localhost",port=5432,user="postgres", password="Cacadcdcuy5."
-#     )
-#     dbReadTable(DB,'Prodi')
-#   })
-# }
-# 
-# function(input,output,session){
-#   output$tblProdi <- renderDataTable({
-#     driver <- dbDriver('PostgreSQL')
-# 
-#     # bangun koneksi ke DBMS
-#     DB <- dbConnect(
-#       driver, dbname="ruangan-IPB", host="localhost",port=5432,user="postgres", password="Cacadcdcuy5."
-#     )
-#     dbReadTable(DB,'Prodi')
-#   })
-# }
