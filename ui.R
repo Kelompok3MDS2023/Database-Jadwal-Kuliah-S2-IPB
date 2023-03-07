@@ -59,6 +59,22 @@ dashboardPage(
       h2(
         "Daftar Program Studi"
       ),
+      
+      selectInput(
+        inputId = "listFak_prodi",
+        label = "Fakultas",
+        choices = c(
+          "FAPERTA" = "a",
+          "SKHB"="b",
+          "FPIK"="c",
+          "FAPET"="d",
+          "FAHUTAN"="e",
+          "FATETA"="f",
+          "FMIPA"="g",
+          "FEM"="h",
+          "FEMA"="i"
+        )
+      ),
       dataTableOutput(
         outputId = "tblProdi"
       )
@@ -69,8 +85,8 @@ dashboardPage(
         "Daftar Ruangan"
       ),
       selectInput(
-        inputId = "listFak",
-        label = "Fakultas",
+        inputId = "listFak_ruang",
+        label = "Gedung",
         choices = c(
           "FAPERTA" = "a",
           "SKHB"="b",
