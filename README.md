@@ -16,7 +16,7 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 <img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
 
 ## Entity-Relationship Diagram
-![ERD-Ruangan-IPB-update](https://user-images.githubusercontent.com/111562803/223121412-cc786b72-c04d-4803-864e-46770991e971.png)
+![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
 ## Sintax Rancangan Database
 
@@ -26,15 +26,15 @@ Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yan
 
 Primary Key: Kode Fakultas
 
-Foreign Key: Kode Fakultas
-
 ```sql
-CREATE TABLE IF NOT EXISTS public.fakultas (
-    Kode_Fk character varying(2) NOT NULL,
-    Nm_Fk text NOT NULL,
-    Jml_Prodi integer NOT NULL,
-    PRIMARY KEY (Kode_Fk)
+CREATE TABLE public.fakultas
+(
+    kode_fk character varying(2) NOT NULL,
+    nama_fk text NOT NULL,
+    jmlh_prodi integer NOT NULL,
+    CONSTRAINT fakultas_pkey PRIMARY KEY (kode_fk)
 );
+
 ```
 
 Tabel Ruangan
@@ -43,32 +43,75 @@ Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, 
 
 Primary Key: Kode Ruangan
 
+Foreign Key: Kode Fakultas
+
 ```sql
-CREATE TABLE IF NOT EXISTS public.ruangan (
-    Kode_RG character varying(25) NOT NULL,
-    Nm_RG text NOT NULL,
-    Lokasi text NOT NULL,
-    Kapasitas integer NOT NULL,
-    Kode_Fk character varying(2) NOT NULL,
-    PRIMARY KEY (Kode_RG)
+CREATE TABLE public.ruangan
+(
+    kode_rg character varying(25) NOT NULL,
+    nama_rg text NOT NULL,
+    lokasi text NOT NULL,
+    kapasitas integer NOT NULL,
+    kode_fk character varying(2) NOT NULL,
+    CONSTRAINT ruangan_pkey PRIMARY KEY (kode_rg),
+    CONSTRAINT ruangan_fkey FOREIGN KEY (kode_fk)
+        REFERENCES public.fakultas (kode_fk) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+);
+```
+Tabel Prodi
+
+Tabel ini menyimpan data kode Program Studi, nama prodi dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
+
+Primary Key: Kode Program Studi
+
+Foreign Key: Kode Fakultas
+
+```sql
+CREATE TABLE public.prodi
+(
+    kode_prodi character varying(25) NOT NULL,
+    nama_prodi text NOT NULL,
+    singkatan character varying(25) NOT NULL,
+    kode_fk character varying(2) NOT NULL,
+    CONSTRAINT prodi_pkey PRIMARY KEY (kode_prodi),
+    CONSTRAINT prodi_kode_fk_fkey FOREIGN KEY (kode_fk)
+        REFERENCES public.fakultas (kode_fk) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
 );
 ```
 
 Tabel Jadwal Kuliah
 
-Tabel ini menyimpan data kode mata kuliah, jadwal, kode ruangan, dan peserta. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
+Tabel ini menyimpan data kode mata kuliah, jenis kelas, hari, jam, dan kode ruangan. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
 
-Primary Key: Kode Matakuliah
+Primary Key: Kode Matakuliah dan Jenis kelas
 
-Foreign Key: Kode Ruangan
+Foreign Key: Kode Ruangan dan kode Matakuliah 
 
 ```sql
-CREATE TABLE IF NOT EXISTS public.Jadwal_Kuliah (
-    Kode_MK character varying(10) NOT NULL,
-    Jadwal text NOT NULL,
-    Peserta text NOT NULL,
-    Kode_RG character varying(25) NOT NULL,
-    PRIMARY KEY (Kode_MK)
+CREATE TABLE public.jadwal_kuliah
+(
+    kode_mk character varying(10) NOT NULL,
+    jenis_kelas character varying(5) NOT NULL,
+    hari text NOT NULL,
+    jam character varying(25) NOT NULL,
+    kode_rg character varying(25) NOT NULL,
+    CONSTRAINT jadwa_kuliah_pkey PRIMARY KEY (kode_mk, jenis_kelas),
+    CONSTRAINT jadwa_kuliah_kode_rg_fkey FOREIGN KEY (kode_rg)
+        REFERENCES public.ruangan (kode_rg) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID,
+    CONSTRAINT jadwa_kuliah_kode_mk_fkey FOREIGN KEY (kode_mk)
+        REFERENCES public.mata_kuliah (kode_mk) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
 );
 ```
 
@@ -78,14 +121,21 @@ Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata k
 
 Primary Key: Kode Mata Kuliah
 
-Foreign Key: Kode Mata Kuliah
+Foreign Key: Kode Program Studi
 
 ```sql
-CREATE TABLE IF NOT EXISTS public.Mata_Kuliah (
-    Kode_MK character varying(10) NOT NULL,
-    Nm_MK text NOT NULL,
-    Semester integer NOT NULL,
-    PRIMARY KEY (Kode_MK)
+CREATE TABLE public.mata_kuliah
+(
+    kode_mk character varying(10) NOT NULL,
+    nama_mk text NOT NULL,
+    semester integer NOT NULL,
+    kode_prodi character varying(25) NOT NULL,
+    CONSTRAINT mata_kuliah_pkey PRIMARY KEY (kode_mk),
+    CONSTRAINT mata_kuliah_kode_prodi_fkey FOREIGN KEY (kode_prodi)
+      REFERENCES public.prodi (kode_prodi) MATCH SIMPLE
+      ON UPDATE NO ACTION
+      ON DELETE NO ACTION
+      NOT VALID
 );
 ```
 
