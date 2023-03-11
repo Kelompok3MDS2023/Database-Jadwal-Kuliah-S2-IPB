@@ -18,6 +18,30 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ## Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
+## Tabel *yo_user*
+
+Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, beserta detail atribut dan deskripsi yang digunakan sebagai berikut:
+| Attribute     | Type                  | Description                     |
+|:--------------|:----------------------|:--------------------------------|
+| kode_fk       | character varying(2)  | Kode Fakultas                   |
+| nama_fk       | text                  | Nama fakultas                   |
+| jmlh_prodi    | integer               | Jumlah Program Studi            |
+| kode_rg       | character varying(25) | Kode Ruangan                    |
+| nama_rg       | text                  | Nama Ruangan                    |
+| lokasi        | text                  | Lokasi                          |
+| kapasitas     | integer               | Kapasitas                       |
+| kode_prodi    | character varying(25) | Kode Program Studi              |
+| nama_prodi    | text                  | Nama Program Studi              |
+| singkatan     | character varying(25) | Singkatan pada Program Studi    |
+| kode_mk       | character varying(10) | Kode Mata Kuliah                |
+| jenis_kelas   | character varying(5)  | Jenis Kelas                     |
+| hari          | text                  | Hari                            |
+| jam           | character varying(25) | Jam                             |
+| nama_mk       | text                  | Nama Matakuliah                 |
+| semester      | integer               | Semester                        |
+
+
+
 ## Sintax Rancangan Database
 
 - Tabel Fakultas
@@ -66,7 +90,7 @@ CREATE TABLE public.ruangan
 ```
 - Tabel Prodi
 
-Tabel ini menyimpan data kode Program Studi, nama prodi dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
+Tabel ini menyimpan data kode Program Studi, nama prodi, singkatan dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
 
 | Primary Key        | Foreign Key   | 
 |:-------------------|:--------------|
