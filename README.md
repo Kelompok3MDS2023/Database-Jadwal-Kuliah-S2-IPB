@@ -24,7 +24,10 @@ Tabel Fakultas
 
 Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yang nantinya akan dihubungan dengan tabel ruangan untuk mengetahui lokasi ruangan berdasarkan fakultas.
 
-Primary Key: Kode Fakultas
+| Primary Key    |
+|:---------------|
+| Kode Fakultas  |
+
 
 ```sql
 CREATE TABLE public.fakultas
@@ -41,9 +44,9 @@ Tabel Ruangan
 
 Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, dan kode fakultas. Tabel ini bertujuan untuk mengetahui lokasi suatu ruangan di IPB yang dicari berdasarkan jadwal kuliah dan kode ruangan.
 
-Primary Key: Kode Ruangan
-
-Foreign Key: Kode Fakultas
+| Primary Key    | Foreign Key   | 
+|:---------------|:--------------|
+| Kode Ruangan   | Kode Fakultas |
 
 ```sql
 CREATE TABLE public.ruangan
@@ -65,9 +68,9 @@ Tabel Prodi
 
 Tabel ini menyimpan data kode Program Studi, nama prodi dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
 
-Primary Key: Kode Program Studi
-
-Foreign Key: Kode Fakultas
+| Primary Key        | Foreign Key   | 
+|:-------------------|:--------------|
+| Kode Program Studi | Kode Fakultas |
 
 ```sql
 CREATE TABLE public.prodi
@@ -89,9 +92,10 @@ Tabel Jadwal Kuliah
 
 Tabel ini menyimpan data kode mata kuliah, jenis kelas, hari, jam, dan kode ruangan. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
 
-Primary Key: Kode Matakuliah dan Jenis kelas
-
-Foreign Key: Kode Ruangan dan kode Matakuliah 
+| Primary Key     | Foreign Key   | 
+|:----------------|:--------------|
+| Kode Matakuliah | Kode Ruangan  |
+| Jenis Kelas     | Matakuliah    |
 
 ```sql
 CREATE TABLE public.jadwal_kuliah
@@ -119,9 +123,11 @@ Tabel Mata Kuliah
 
 Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata kuliah. Tabel ini bertujuan untuk memberikan informasi mata kuliah yang nantinya akan dihubungkan dengan tabel jadwal kuliah.
 
-Primary Key: Kode Mata Kuliah
+| Primary Key     | Foreign Key        | 
+|:----------------|:-------------------|
+| Kode Matakuliah | Kode Program Studi |
 
-Foreign Key: Kode Program Studi
+
 
 ```sql
 CREATE TABLE public.mata_kuliah
