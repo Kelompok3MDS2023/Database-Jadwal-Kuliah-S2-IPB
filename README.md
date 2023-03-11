@@ -15,12 +15,12 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ## Skema
 <img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
 
-## Entity-Relationship Diagram
+## Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
 ## Sintax Rancangan Database
 
-Tabel Fakultas
+- Tabel Fakultas
 
 Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yang nantinya akan dihubungan dengan tabel ruangan untuk mengetahui lokasi ruangan berdasarkan fakultas.
 
@@ -40,7 +40,7 @@ CREATE TABLE public.fakultas
 
 ```
 
-Tabel Ruangan
+- Tabel Ruangan
 
 Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, dan kode fakultas. Tabel ini bertujuan untuk mengetahui lokasi suatu ruangan di IPB yang dicari berdasarkan jadwal kuliah dan kode ruangan.
 
@@ -64,7 +64,7 @@ CREATE TABLE public.ruangan
         NOT VALID
 );
 ```
-Tabel Prodi
+- Tabel Prodi
 
 Tabel ini menyimpan data kode Program Studi, nama prodi dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
 
@@ -88,7 +88,7 @@ CREATE TABLE public.prodi
 );
 ```
 
-Tabel Jadwal Kuliah
+- Tabel Jadwal Kuliah
 
 Tabel ini menyimpan data kode mata kuliah, jenis kelas, hari, jam, dan kode ruangan. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
 
@@ -119,7 +119,7 @@ CREATE TABLE public.jadwal_kuliah
 );
 ```
 
-Tabel Mata Kuliah
+- Tabel Mata Kuliah
 
 Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata kuliah. Tabel ini bertujuan untuk memberikan informasi mata kuliah yang nantinya akan dihubungkan dengan tabel jadwal kuliah.
 
