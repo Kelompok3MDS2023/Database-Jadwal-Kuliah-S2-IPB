@@ -7,21 +7,19 @@
 • [Tentang Data Base Ruangan IPB](#scroll-Tentang-Data-Base-Ruangan-IPB)
 • [Screenshot](#📸-Screenshot)
 • [Demo](#🎥-Demo)
-• [Dokumentasi](#blue_book-Documentation)
 
 </div>
 
 ## :bookmark_tabs: Main Menu
 
-- [Anggota Kelompok](#family-Anggota-Kelompok)
-- [Data Base Ruangan IPB](#scroll-Data-Base-Ruangan-IPB)
-- [Screenshot](#rice_scene-Screenshot)
-- [Demo](#🎥-Demo)
-- [Dokumentasi](#blue_book-Documentation)
-- [Requirements](#exclamation-Requirements)
-- [Skema Database](#floppy_disk-Skema-Database)
-- [Entity Relationship Diagram](#rotating_light-Entity-Relationship-Diagram)
-- [Deskripsi Data](#heavy_check_mark-Deskripsi-Data)
+- [Anggota Kelompok](#👨‍👩‍👧‍👧-Anggota-Kelompok)
+- [Tentang Data Base Ruangan IPB](#📈-Tentang-Data-Base-Ruangan-IPB)
+- [Screenshot](#📸_scene-Screenshot)
+- [Demo](#📹-Demo)
+- [Requirements](#❗-Requirements)
+- [Skema Database](#💻-Skema-Database)
+- [Entity Relationship Diagram](#📝-Entity-Relationship-Diagram)
+- [Deskripsi Data](#🔎-Deskripsi-Data)
 - [Struktur Folder](#open_file_folder-Stuktur-Folder)
 
 
@@ -32,21 +30,21 @@
 3. Yully Sofyah Waode  (G1501222056) : Shiny Developer (front-end)
 4. Nadira Nisa Alwani  (G1501222048) : Technical Writer
 
-## 📊 Data Base Ruangan IPB 
+## 📈 Data Base Ruangan IPB 
 Deskripsi Database Ruangan IPB
 
 Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
 
 ## 📸 Screenshot
 
-## 🎥 Demo
+## 📹 Demo
 
-## Requirements
+## ❗ Requirements
 
-## Skema Database
+## 💻 Skema Database
 <img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
 
-## 📊 Entity Relationship Diagram
+## 📝 Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
 ## 🔎 Deskripsi Data
@@ -199,7 +197,7 @@ CREATE TABLE public.mata_kuliah
       NOT VALID
 );
 ```
-### Struktur Folder
+### :open_file_folder: Struktur Folder
 
 
 ## 🎇 Tim Pengembang
