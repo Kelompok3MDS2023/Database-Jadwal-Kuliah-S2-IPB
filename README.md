@@ -12,7 +12,7 @@
 
 ## :bookmark_tabs: Main Menu
 
-- [Anggota Kelompok](#👨‍👩‍👧‍👧-Anggota-Kelompok)
+- [Anggota Kelompok](## 👨‍👩‍👧‍👧 Anggota Kelompok)
 - [Tentang Data Base Ruangan IPB](#📈-Tentang-Data-Base-Ruangan-IPB)
 - [Screenshot](#📸_scene-Screenshot)
 - [Demo](#📹-Demo)
