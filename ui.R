@@ -4,167 +4,397 @@ library(DT)
 library(RPostgreSQL)
 library(DBI)
 
-dashboardPage(
+DB <- connectDB()
+namaFak <- dbGetQuery(DB,"select nama_fk from fakultas;")
+listFak <- namaFak$nama_fk
+
+namaProdi <- dbGetQuery(DB,"select nama_prodi from prodi;")
+listProdi <- namaProdi$nama_prodi
+
+namaMatkul <- dbGetQuery(DB,"select kode_mk from mata_kuliah;")
+listMatkul <- namaMatkul$kode_mk
+
+navbarPage(
   title = "Database Ruangan IPB",
-  dashboardHeader(
-    title = "Database Ruangan IPB"
-  ),
-  dashboardSidebar(
-    sidebarMenu(
-      menuItem(
-        text = "Fakultas",
-        tabName = "tab_aga5pjwc1c",
-        icon = icon("school")
+  selected = "Summary Database",
+  collapsible = TRUE,
+  theme = bslib::bs_theme(),
+  
+  tabPanel(
+    title = "Summary Database",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1",
+        "area2 area2",
+        "area3 area3",
+        "area4 area4",
+        "area6 area6",
+        "area5 area5",
+        "area7 area7"
       ),
-      menuItem(
-        text = "Program Studi",
-        tabName = "tab_ahii87bqpu",
-        icon = icon("graduation-cap")
+      row_sizes = c(
+        "1.14fr",
+        "0.76fr",
+        "1.11fr",
+        "0.8fr",
+        "1.15fr",
+        "0.84fr",
+        "1.24fr",
+        "0.96fr"
       ),
-      menuItem(
-        text = "Ruangan",
-        tabName = "tab_pet5t4eg0l",
-        icon = icon("house")
+      col_sizes = c(
+        "1.03fr",
+        "0.97fr"
       ),
-      menuItem(
-        text = "Jadwal Kuliah",
-        tabName = "tab_4pt74yw4gi",
-        icon = icon("clock")
+      gap_size = "10px",
+      grid_card_text(
+        content = "Jumlah Program Studi Per Fakultas",
+        alignment = "center",
+        area = "area0"
       ),
-      menuItem(
-        text = "Mata Kuliah",
-        tabName = "tab_mbrxn71tai",
-        icon = icon("book")
+      grid_card(
+        area = "area1",
+        plotlyOutput(
+          outputId = "ProdiPerFak",
+          width = "100%",
+          height = "400px"
+        )
       ),
-      menuItem(
-        text = "Pencarian Ruangan",
-        tabName = "tab_idv81nu8ip",
-        icon = icon("searchengin")
+      grid_card_text(
+        content = "Jumlah Ruangan Per Fakultas",
+        alignment = "center",
+        area = "area2"
+      ),
+      grid_card(
+        area = "area3",
+        plotlyOutput(
+          outputId = "RuanganPerFak",
+          width = "100%",
+          height = "400px"
+        )
+      ),
+      grid_card_text(
+        content = "Sebaran Ruangan Kuliah Per Hari",
+        alignment = "center",
+        area = "area4"
+      ),
+      grid_card_text(
+        content = "Jumlah Mata Kuliah Per Program Studi",
+        alignment = "center",
+        area = "area5"
+      ),
+      grid_card(
+        area = "area6",
+        plotlyOutput(
+          outputId = "RuanganPerHari",
+          width = "100%",
+          height = "400px"
+        )
+      ),
+      grid_card(
+        area = "area7",
+        plotlyOutput(
+          outputId = "MatkulPerProdi",
+          width = "100%",
+          height = "400px"
+        )
       )
     )
   ),
-  dashboardBody(
-    tabItems(
-      tabItem(
-      tabName = "tab_aga5pjwc1c",
-      h2(
-        "Daftar Fakultas"
+  
+  tabPanel(
+    title = "Fakultas",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
       ),
-      dataTableOutput(
-        outputId = "tblFak"
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Daftar Fakultas",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        dataTableOutput(outputId = "tblFak", width = "100%")
       )
-    ),
-    tabItem(
-      tabName = "tab_ahii87bqpu",
-      h2(
-        "Daftar Program Studi"
+    )
+  ),
+  tabPanel(
+    title = "Program Studi",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
       ),
-      
-      selectInput(
-        inputId = "listFak_prodi",
-        label = "Fakultas",
-        choices = c(
-          "FAPERTA" = "a",
-          "SKHB"="b",
-          "FPIK"="c",
-          "FAPET"="d",
-          "FAHUTAN"="e",
-          "FATETA"="f",
-          "FMIPA"="g",
-          "FEM"="h",
-          "FEMA"="i"
-        )
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
       ),
-      dataTableOutput(
-        outputId = "tblProdi"
-      )
-    ),
-    tabItem(
-      tabName = "tab_pet5t4eg0l",
-      h2(
-        "Daftar Ruangan"
+      col_sizes = c(
+        "1fr",
+        "1fr"
       ),
-      selectInput(
-        inputId = "listFak_ruang",
-        label = "Gedung",
-        choices = c(
-          "FAPERTA" = "a",
-          "SKHB"="b",
-          "FPIK"="c",
-          "FAPET"="d",
-          "FAHUTAN"="e",
-          "FATETA"="f",
-          "FMIPA"="g",
-          "FEM"="h",
-          "FEMA"="i",
-          "Ruang Lain"="l"
-        )
+      gap_size = "10px",
+      grid_card_text(
+        content = "Daftar Program Studi",
+        alignment = "center",
+        area = "area0"
       ),
-      dataTableOutput(
-        outputId = "tblRuangan"
-      )
-    ),
-    tabItem(
-      tabName = "tab_4pt74yw4gi",
-      h2(
-        "Jadwal Kuliah"
-      ),
-      selectInput(
-        inputId = "listProdi_Jadwal",
-        label = "Program Studi",
-        choices = c(
-          "AGH","ITB","PBT","PWL","TNH","TEK","THP","TPL","ITP","IPH","TPP","BOT","KLI","STK","MAN","KMP"
-        )
-      ),
-      dataTableOutput(
-        outputId = "tblJadwal"
-      )
-    ),
-    tabItem(
-      tabName = "tab_mbrxn71tai",
-      h2(
-        "Daftar Mata Kuliah"
-      ),
-      selectInput(
-        inputId = "listProdi_matkul",
-        label = "Program Studi",
-        choices = c(
-          "AGH","ITB","PBT","PWL","TNH","TEK","THP","TPL","ITP","IPH","TPP","BOT","KLI","STK","MAN","KMP"
-        )
-      ),
-      dataTableOutput(
-        outputId = "tblMatkul"
-      )
-    ),
-    tabItem(
-      tabName = "tab_idv81nu8ip",
-      h2(
-        "Daftar Ruangan Berdasarkan Mata Kuliah"
-      ),
-      fluidRow(
-        column(
-          width = 6,
-          selectInput(
-            inputId = "listProdi_search",
-            label = "Program Studi",
-            choices = c(
-              "AGH","ITB","PBT","PWL","TNH","TEK","THP","TPL","ITP","IPH","TPP","BOT","KLI","STK","MAN","KMP"
+      grid_card(
+        area = "area1",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.45fr",
+            "1.55fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card(
+            area = "area0",
+            selectInput(
+              inputId = "listFak_prodi",
+              label = "Fakultas",
+              choices = listFak
             )
-          )
-        ),
-        column(
-          width = 6,
-          selectInput(
-            inputId = "listMatkul",
-            label = "Mata Kuliah",
-            choices = NULL
+          ),
+          grid_card(
+            area = "area1",
+            dataTableOutput(outputId = "tblProdi", width = "100%")
           )
         )
-      ),
-      dataTableOutput(
-        outputId = "tblRuanganMatkul"
       )
     )
+  ),
+  tabPanel(
+    title = "Ruangan",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
+      ),
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Daftar Ruangan",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.45fr",
+            "1.55fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card(
+            area = "area0",
+            selectInput(
+              inputId = "listFak_ruang",
+              label = "Gedung",
+              choices = listFak
+            )
+          ),
+          grid_card(
+            area = "area1",
+            dataTableOutput(outputId = "tblRuangan", width = "100%")
+          )
+        )
+      )
+    )
+  ),
+  tabPanel(
+    title = "Jadwal Kuliah",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
+      ),
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Jadwal Kuliah",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.44fr",
+            "1.56fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card(
+            area = "area0",
+            selectInput(
+              inputId = "listProdi_Jadwal",
+              label = "Program Studi",
+              choices = listProdi
+            )
+          ),
+          
+          grid_card(
+            area = "area1",
+            dataTableOutput(outputId = "tblJadwal", width = "100%")
+          )
+        )
+      )
+    )
+  ),
+  tabPanel(
+    title = "Mata Kuliah",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
+      ),
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Daftar Mata Kuliah",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.46fr",
+            "1.54fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card(
+            area = "area0",
+            selectInput(
+              inputId = "listProdi_matkul",
+              label = "Program Studi",
+              choices = listProdi
+            )
+          ),
+          grid_card(
+            area = "area1",
+            dataTableOutput(outputId = "tblMatkul", width = "100%")
+          )
+        )
+      )
+    )
+  ),
+  tabPanel(
+    title = "Cari Kelas",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1"
+      ),
+      row_sizes = c(
+        "0.27fr",
+        "1.73fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Mencari Lokasi Kelas",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.46fr",
+            "1.54fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card(
+            area = "area0",
+            selectInput(
+              inputId = "listMatkul",
+              label = "Mata Kuliah",
+              choices = listMatkul
+            )
+          ),
+          grid_card(
+            area = "area1",
+            dataTableOutput(outputId = "tblKelas", width = "100%")
+          )
+        )
+      )
     )
   )
+  
 )
