@@ -4,7 +4,7 @@
 
 # Data Base Ruangan IPB
 
-• [Tentang Data Base]
+• [Tentang Data Base Ruangan IPB]
 • [Screenshot]
 • [Demo]
 • [Dokumentasi]
@@ -37,7 +37,7 @@ Deskripsi Database Ruangan IPB
 
 Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
 
-## ScreenShot
+## Screenshot
 
 ## Demo
 
