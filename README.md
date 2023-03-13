@@ -52,7 +52,7 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
 ## Deskripsi Data
-# Tabel *yo_user*
+### Tabel *yo_user*
 
 Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, beserta detail atribut dan deskripsi yang digunakan sebagai berikut:
 | Attribute     | Type                  | Description                     |
@@ -75,7 +75,7 @@ Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, beserta deta
 | semester      | integer               | Semester                        |
 
 
-# Sintax Rancangan Database
+### Sintax Rancangan Database
 
 - Tabel Fakultas
 
@@ -201,4 +201,4 @@ CREATE TABLE public.mata_kuliah
       NOT VALID
 );
 ```
-## Struktur Folder
+### Struktur Folder
