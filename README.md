@@ -4,35 +4,25 @@
 
 # Data Base Ruangan IPB
 
-[Tentang]
-•
-[Screenshot]
-•
-[Demo]
-•
-[Dokumentasi]
+• [Tentang Data Base]
+• [Screenshot]
+• [Demo]
+• [Dokumentasi]
 
 </div>
 
-## Menu
+## Main Menu
 
+- [Anggota Kelompok]
 - [Data Base Ruangan IPB]
 - [Screenshot]
 - [Demo]
 - [Dokumentasi]
 - [Requirements]
 - [Skema Database]
-- [ERD]
+- [Entity Relationship Diagram]
 - [Deskripsi Data]
 - [Struktur Folder]
-- [Tim Pengembang]
-
-
-
-# Data Base Ruangan IPB 
-Deskripsi Database Ruangan IPB
-
-Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
 
 
 ## Anggota Kelompok
@@ -42,14 +32,27 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 3. Yully Sofyah Waode  (G1501222056) : Shiny Developer (front-end)
 4. Nadira Nisa Alwani  (G1501222048) : Technical Writer
 
+## Data Base Ruangan IPB 
+Deskripsi Database Ruangan IPB
 
-## Skema
+Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
+
+## ScreenShot
+
+## Demo
+
+## Dokumentasi
+
+## Requirements
+
+## Skema Database
 <img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
 
 ## Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
-## Tabel *yo_user*
+## Deskripsi Data
+# Tabel *yo_user*
 
 Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, beserta detail atribut dan deskripsi yang digunakan sebagai berikut:
 | Attribute     | Type                  | Description                     |
@@ -72,8 +75,7 @@ Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, beserta deta
 | semester      | integer               | Semester                        |
 
 
-
-## Sintax Rancangan Database
+# Sintax Rancangan Database
 
 - Tabel Fakultas
 
@@ -199,3 +201,4 @@ CREATE TABLE public.mata_kuliah
       NOT VALID
 );
 ```
+## Struktur Folder
