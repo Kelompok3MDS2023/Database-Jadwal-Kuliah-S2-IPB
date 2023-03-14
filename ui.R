@@ -1,11 +1,39 @@
 library(shiny)
 library(shinydashboard)
+library(DT)
 library(RPostgreSQL)
 library(DBI)
-library(ggplot2)
+library(bslib)
 library(gridlayout)
 library(plotly)
-library(DT)
+
+# Local database
+# connectDB <- function(){
+#   driver <- dbDriver('PostgreSQL')
+# 
+#   DB <- dbConnect(
+#     driver,
+#     dbname="ruangan-IPB",
+#     host="localhost",
+#     port=5432,
+#     user="postgres",
+#     password="root"
+#   )
+# }
+
+
+#1. set connection to ElephantSQL server database
+connectDB <- function(){
+  driver <- dbDriver('PostgreSQL')
+  DB <- dbConnect(
+    driver,
+    dbname="srsttvfb", # User & Default database
+    host="topsy.db.elephantsql.com", # Server
+    # port=5433,
+    user="srsttvfb", # User & Default database
+    password="TLaAq8YtYIw6OXrnpcJRERsgE6MspeOn" # Password
+  )
+}
 
 DB <- connectDB()
 namaFak <- dbGetQuery(DB,"select nama_fk from fakultas;")
@@ -78,7 +106,7 @@ navbarPage(
         )
       ),
       grid_card_text(
-        content = "Jumlah Jadwal Kuliah Per Hari",
+        content = "Sebaran Ruangan Kuliah Per Hari",
         alignment = "center",
         area = "area4"
       ),
