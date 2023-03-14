@@ -239,6 +239,24 @@ CREATE TABLE public.mata_kuliah
 ```
 ### :open_file_folder: Struktur Folder
 
+```
+.
+├── app           # ShinyApps
+│   ├── css
+│   │   ├── **/*.css
+│   ├── server.R
+│   └── ui.R
+├── data 
+│   ├── xlsx
+│   └── sql
+|       └── db.sql
+├── src           # Project source code
+├── doc           # Doc for the project
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
 
 ## 🎇 Anggota Tim Pengembang
 1. Merryanty Lestari P (G1501221022) : Data Manager
