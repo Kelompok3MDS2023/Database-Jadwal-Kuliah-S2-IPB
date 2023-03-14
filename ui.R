@@ -1,8 +1,11 @@
 library(shiny)
 library(shinydashboard)
-library(DT)
 library(RPostgreSQL)
 library(DBI)
+library(ggplot2)
+library(gridlayout)
+library(plotly)
+library(DT)
 
 DB <- connectDB()
 namaFak <- dbGetQuery(DB,"select nama_fk from fakultas;")
