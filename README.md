@@ -34,11 +34,16 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 </div>
 
 ## 📸 Screenshot
+<div align="justify">
+R-Shiny pada dasarnya merupakan sebuah framework (kerangka kerja) yang ditawarkan oleh RStudio. Dengan menggunakan R-Shiny dapat membuat laporan dan visualisasi data yang efektif sehingga eksplorasi data pun lebih mudah. Selain itu, RStudio juga menyediakan elemen Shiny yang memungkinkan Anda menggunakan elemen HTML untuk mendesain konten yang ada dalam aplikasi.
+ 
+Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen database Ruang di IPB, yang bertujuan untuk menampilkan serta memberikan informasi mengenai ruangan belajar.
+</div>
 
 ## 📹 Demo
-| url                      | login          | password |
-| ------------------------ | -------------- | -------- |
-|[ http://shinyapps.io/hospital ](https://merryanty.shinyapps.io/Ruangan-IPB/)| merryantylestari9@gmail.com | InsyaAllah2022      |
+| url                      | login          |
+| ------------------------ | -------------- |
+|[ http://shinyapps.io/hospital ](https://merryanty.shinyapps.io/Ruangan-IPB/)| merryantylestari9@gmail.com |
 
 
 
@@ -78,8 +83,9 @@ library(plotly)
 ### Sintax Rancangan Database
 
 1️⃣ Tabel Fakultas
-
+<div align="justify">
 Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yang nantinya akan dihubungkan dengan tabel ruangan untuk mengetahui lokasi ruangan berdasarkan fakultas.
+</div>
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -104,8 +110,9 @@ CREATE TABLE public.fakultas
 ```
 
 2️⃣ Tabel Ruangan
-
+<div align="justify">
 Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, dan kode fakultas. Tabel ini bertujuan untuk mengetahui lokasi suatu ruangan di IPB yang dicari berdasarkan jadwal kuliah dan kode ruangan.
+</div>
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -136,8 +143,9 @@ CREATE TABLE public.ruangan
 );
 ```
 3️⃣ Tabel Prodi
-
+<div align="justify">
 Tabel ini menyimpan data kode Program Studi, nama prodi, singkatan dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
+</div>
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -167,8 +175,9 @@ CREATE TABLE public.prodi
 ```
 
 4️⃣ Tabel Jadwal Kuliah
-
+<div align="justify">
 Tabel ini menyimpan data kode mata kuliah, jenis kelas, hari, jam, dan kode ruangan. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
+</div>
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -206,8 +215,9 @@ CREATE TABLE public.jadwal_kuliah
 ```
 
 5️⃣ Tabel Mata Kuliah
-
+<div align="justify">
 Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata kuliah. Tabel ini bertujuan untuk memberikan informasi mata kuliah yang nantinya akan dihubungkan dengan tabel jadwal kuliah.
+</div>
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
