@@ -46,7 +46,7 @@ namaMatkul <- dbGetQuery(DB,"select kode_mk from mata_kuliah;")
 listMatkul <- namaMatkul$kode_mk
 
 navbarPage(
-  title = "Database Ruangan IPB",
+  title = "Database Jadwal Kuliah S2 IPB",
   selected = "Summary Database",
   collapsible = TRUE,
   theme = bslib::bs_theme(version = 5, bootswatch = "minty"),
@@ -55,7 +55,7 @@ navbarPage(
     title = "Summary Database",
     tabsetPanel(
       tabPanel(
-        title = "Sebaran Program Studi",
+        title = "Sebaran Program Studi S2",
         grid_container(
           layout = c(
             "area0 area0",
@@ -213,15 +213,15 @@ navbarPage(
     grid_container(
       layout = c(
         "area0 area0",
-        "area1 area1"
+        "area1 area2"
       ),
       row_sizes = c(
         "0.27fr",
         "1.73fr"
       ),
       col_sizes = c(
-        "1fr",
-        "1fr"
+        "0.42fr",
+        "1.58fr"
       ),
       gap_size = "10px",
       grid_card_text(
@@ -231,33 +231,15 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        grid_container(
-          layout = c(
-            "area0 area0",
-            "area1 area1"
-          ),
-          row_sizes = c(
-            "0.45fr",
-            "1.55fr"
-          ),
-          col_sizes = c(
-            "1fr",
-            "1fr"
-          ),
-          gap_size = "10px",
-          grid_card(
-            area = "area0",
-            selectInput(
-              inputId = "listFak_prodi",
-              label = "Fakultas",
-              choices = listFak
-            )
-          ),
-          grid_card(
-            area = "area1",
-            dataTableOutput(outputId = "tblProdi", width = "100%")
-          )
+        selectInput(
+          inputId = "listFak_prodi",
+          label = "Fakultas",
+          choices = listFak
         )
+      ),
+      grid_card(
+        area = "area2",
+        dataTableOutput(outputId = "tblProdi", width = "100%")
       )
     )
   ),
@@ -266,15 +248,15 @@ navbarPage(
     grid_container(
       layout = c(
         "area0 area0",
-        "area1 area1"
+        "area1 area2"
       ),
       row_sizes = c(
         "0.27fr",
         "1.73fr"
       ),
       col_sizes = c(
-        "1fr",
-        "1fr"
+        "0.42fr",
+        "1.58fr"
       ),
       gap_size = "10px",
       grid_card_text(
@@ -284,33 +266,15 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        grid_container(
-          layout = c(
-            "area0 area0",
-            "area1 area1"
-          ),
-          row_sizes = c(
-            "0.45fr",
-            "1.55fr"
-          ),
-          col_sizes = c(
-            "1fr",
-            "1fr"
-          ),
-          gap_size = "10px",
-          grid_card(
-            area = "area0",
-            selectInput(
-              inputId = "listFak_ruang",
-              label = "Gedung",
-              choices = listFak
-            )
-          ),
-          grid_card(
-            area = "area1",
-            dataTableOutput(outputId = "tblRuangan", width = "100%")
-          )
+        selectInput(
+          inputId = "listFak_ruang",
+          label = "Gedung",
+          choices = listFak
         )
+      ),
+      grid_card(
+        area = "area2",
+        dataTableOutput(outputId = "tblRuangan", width = "100%")
       )
     )
   ),
@@ -319,15 +283,15 @@ navbarPage(
     grid_container(
       layout = c(
         "area0 area0",
-        "area1 area1"
+        "area1 area2"
       ),
       row_sizes = c(
         "0.27fr",
         "1.73fr"
       ),
       col_sizes = c(
-        "1fr",
-        "1fr"
+        "0.42fr",
+        "1.58fr"
       ),
       gap_size = "10px",
       grid_card_text(
@@ -337,34 +301,15 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        grid_container(
-          layout = c(
-            "area0 area0",
-            "area1 area1"
-          ),
-          row_sizes = c(
-            "0.44fr",
-            "1.56fr"
-          ),
-          col_sizes = c(
-            "1fr",
-            "1fr"
-          ),
-          gap_size = "10px",
-          grid_card(
-            area = "area0",
-            selectInput(
-              inputId = "listProdi_Jadwal",
-              label = "Program Studi",
-              choices = listProdi
-            )
-          ),
-          
-          grid_card(
-            area = "area1",
-            dataTableOutput(outputId = "tblJadwal", width = "100%")
-          )
+        selectInput(
+          inputId = "listProdi_Jadwal",
+          label = "Program Studi",
+          choices = listProdi
         )
+      ),
+      grid_card(
+        area = "area2",
+        dataTableOutput(outputId = "tblJadwal", width = "100%")
       )
     )
   ),
@@ -373,15 +318,15 @@ navbarPage(
     grid_container(
       layout = c(
         "area0 area0",
-        "area1 area1"
+        "area1 area2"
       ),
       row_sizes = c(
         "0.27fr",
         "1.73fr"
       ),
       col_sizes = c(
-        "1fr",
-        "1fr"
+        "0.42fr",
+        "1.58fr"
       ),
       gap_size = "10px",
       grid_card_text(
@@ -391,33 +336,15 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        grid_container(
-          layout = c(
-            "area0 area0",
-            "area1 area1"
-          ),
-          row_sizes = c(
-            "0.46fr",
-            "1.54fr"
-          ),
-          col_sizes = c(
-            "1fr",
-            "1fr"
-          ),
-          gap_size = "10px",
-          grid_card(
-            area = "area0",
-            selectInput(
-              inputId = "listProdi_matkul",
-              label = "Program Studi",
-              choices = listProdi
-            )
-          ),
-          grid_card(
-            area = "area1",
-            dataTableOutput(outputId = "tblMatkul", width = "100%")
-          )
+        selectInput(
+          inputId = "listProdi_matkul",
+          label = "Program Studi",
+          choices = listProdi
         )
+      ),
+      grid_card(
+        area = "area2",
+        dataTableOutput(outputId = "tblMatkul", width = "100%")
       )
     )
   ),
@@ -426,15 +353,17 @@ navbarPage(
     grid_container(
       layout = c(
         "area0 area0",
-        "area1 area1"
+        "area1 area3",
+        "area1 area3"
       ),
       row_sizes = c(
-        "0.27fr",
-        "1.73fr"
+        "0.37fr",
+        "1.32fr",
+        "1.31fr"
       ),
       col_sizes = c(
-        "1fr",
-        "1fr"
+        "0.42fr",
+        "1.58fr"
       ),
       gap_size = "10px",
       grid_card_text(
@@ -444,32 +373,17 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        grid_container(
-          layout = c(
-            "area0 area0",
-            "area1 area1"
-          ),
-          row_sizes = c(
-            "0.46fr",
-            "1.54fr"
-          ),
-          col_sizes = c(
-            "1fr",
-            "1fr"
-          ),
-          gap_size = "10px",
-          grid_card(
-            area = "area0",
-            selectInput(
-              inputId = "listMatkul",
-              label = "Mata Kuliah",
-              choices = listMatkul
-            )
-          ),
-          grid_card(
-            area = "area1",
-            dataTableOutput(outputId = "tblKelas", width = "100%")
-          )
+        selectInput(
+          inputId = "listMatkul",
+          label = "Mata Kuliah",
+          choices = listMatkul
+        )
+      ),
+      grid_card(
+        area = "area3",
+        dataTableOutput(
+          outputId = "tblKelas",
+          width = "100%"
         )
       )
     )
