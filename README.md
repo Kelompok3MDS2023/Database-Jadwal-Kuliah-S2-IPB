@@ -5,8 +5,8 @@
 # Data Base Ruangan IPB
 
 • [Tentang Data Base Ruangan IPB](#tentang-data-base-ruangan-ipb)
-• [Screenshot](##-📸-screenshot)
-• [Demo](#🎥-Demo)
+• [Screenshot](#camera_flash-screenshot)
+• [Demo](#video_camera-demo)
 • [Dokumentasi](#blue_book-documentation)
 
 </div>
@@ -22,7 +22,7 @@
 - [Entity Relationship Diagram](#📝-Entity-Relationship-Diagram)
 - [Deskripsi Data](#🔎-Deskripsi-Data)
 - [Struktur Folder](#open_file_folder-Stuktur-Folder)
-- [Anggota Tim Pengembang](#🎇-Anggota-Tim-Pengembang)
+- [Anggota Tim Pengembang](#fireworks-anggota-tim-pengembang)
 
 
 ## Tentang Data Base Ruangan IPB 
