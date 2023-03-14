@@ -5,7 +5,7 @@
 # Data Base Ruangan IPB
 
 • [Tentang Data Base Ruangan IPB](#scroll-Tentang-Data-Base-Ruangan-IPB)
-• [Screenshot](#📸-Screenshot)
+• [Screenshot](#📸-screenshot)
 • [Demo](#🎥-Demo)
 • [Dokumentasi](#blue_book-documentation)
 
@@ -33,7 +33,7 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 
 </div>
 
-## 📸 Screenshot
+#📸 Screenshot
 <div align="justify">
 R-Shiny pada dasarnya merupakan sebuah framework (kerangka kerja) yang ditawarkan oleh RStudio. Dengan menggunakan R-Shiny dapat membuat laporan dan visualisasi data yang efektif sehingga eksplorasi data pun lebih mudah. Selain itu, RStudio juga menyediakan elemen Shiny yang memungkinkan Anda menggunakan elemen HTML untuk mendesain konten yang ada dalam aplikasi.
 
