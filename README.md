@@ -4,7 +4,7 @@
 
 # Data Base Ruangan IPB
 
-• [Tentang Data Base Ruangan IPB](#📈tentang-data-base-ruangan-ipb)
+• [Tentang Data Base Ruangan IPB](#tentang-data-base-ruangan-ipb)
 • [Screenshot](##-📸-screenshot)
 • [Demo](#🎥-Demo)
 • [Dokumentasi](#blue_book-documentation)
@@ -25,7 +25,7 @@
 - [Anggota Tim Pengembang](#🎇-Anggota-Tim-Pengembang)
 
 
-## 📈 Tentang Data Base Ruangan IPB 
+## Tentang Data Base Ruangan IPB 
 Deskripsi Database Ruangan IPB
 
 <div align="justify">
