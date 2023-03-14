@@ -78,7 +78,7 @@ navbarPage(
         )
       ),
       grid_card_text(
-        content = "Sebaran Ruangan Kuliah Per Hari",
+        content = "Jumlah Jadwal Kuliah Per Hari",
         alignment = "center",
         area = "area4"
       ),
