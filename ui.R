@@ -49,86 +49,133 @@ navbarPage(
   title = "Database Ruangan IPB",
   selected = "Summary Database",
   collapsible = TRUE,
-  theme = bslib::bs_theme(),
+  theme = bslib::bs_theme(version = 5, bootswatch = "minty"),
   
   tabPanel(
     title = "Summary Database",
-    grid_container(
-      layout = c(
-        "area0 area0",
-        "area1 area1",
-        "area2 area2",
-        "area3 area3",
-        "area4 area4",
-        "area6 area6",
-        "area5 area5",
-        "area7 area7"
-      ),
-      row_sizes = c(
-        "1.14fr",
-        "0.76fr",
-        "1.11fr",
-        "0.8fr",
-        "1.15fr",
-        "0.84fr",
-        "1.24fr",
-        "0.96fr"
-      ),
-      col_sizes = c(
-        "1.03fr",
-        "0.97fr"
-      ),
-      gap_size = "10px",
-      grid_card_text(
-        content = "Jumlah Program Studi Per Fakultas",
-        alignment = "center",
-        area = "area0"
-      ),
-      grid_card(
-        area = "area1",
-        plotlyOutput(
-          outputId = "ProdiPerFak",
-          width = "100%",
-          height = "400px"
+    tabsetPanel(
+      tabPanel(
+        title = "Sebaran Program Studi",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.27fr",
+            "1.73fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card_text(
+            content = "Jumlah Program Studi Per Fakultas",
+            alignment = "center",
+            area = "area0"
+          ),
+          grid_card(
+            area = "area1",
+            plotlyOutput(
+              outputId = "ProdiPerFak",
+              width = "100%",
+              height = "400px"
+            )
+          )
         )
       ),
-      grid_card_text(
-        content = "Jumlah Ruangan Per Fakultas",
-        alignment = "center",
-        area = "area2"
-      ),
-      grid_card(
-        area = "area3",
-        plotlyOutput(
-          outputId = "RuanganPerFak",
-          width = "100%",
-          height = "400px"
+      tabPanel(
+        title = "Sebaran Ruangan",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.27fr",
+            "1.73fr"
+          ),
+          col_sizes = c(
+            "1fr",
+            "1fr"
+          ),
+          gap_size = "10px",
+          grid_card_text(
+            content = "Jumlah Ruangan Per Fakultas",
+            alignment = "center",
+            area = "area0"
+          ),
+          grid_card(
+            area = "area1",
+            plotlyOutput(
+              outputId = "RuanganPerFak",
+              width = "100%",
+              height = "400px"
+            )
+          )
         )
       ),
-      grid_card_text(
-        content = "Sebaran Ruangan Kuliah Per Hari",
-        alignment = "center",
-        area = "area4"
-      ),
-      grid_card_text(
-        content = "Jumlah Mata Kuliah Per Program Studi",
-        alignment = "center",
-        area = "area5"
-      ),
-      grid_card(
-        area = "area6",
-        plotlyOutput(
-          outputId = "RuanganPerHari",
-          width = "100%",
-          height = "400px"
+      tabPanel(
+        title = "Sebaran Jadwal",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.27fr",
+            "1.73fr"
+          ),
+          col_sizes = c(
+            "0.99fr",
+            "1.01fr"
+          ),
+          gap_size = "10px",
+          grid_card_text(
+            content = "Sebaran Jadwal Kuliah Per Hari",
+            alignment = "center",
+            area = "area0"
+          ),
+          grid_card(
+            area = "area1",
+            plotlyOutput(
+              outputId = "RuanganPerHari",
+              width = "100%",
+              height = "400px"
+            )
+          )
         )
       ),
-      grid_card(
-        area = "area7",
-        plotlyOutput(
-          outputId = "MatkulPerProdi",
-          width = "100%",
-          height = "400px"
+      tabPanel(
+        title = "Jumlah Mata Kuliah",
+        grid_container(
+          layout = c(
+            "area0 area0",
+            "area1 area1"
+          ),
+          row_sizes = c(
+            "0.28fr",
+            "1.72fr"
+          ),
+          col_sizes = c(
+            "0.98fr",
+            "1.02fr"
+          ),
+          gap_size = "10px",
+          grid_card_text(
+            content = "Jumlah Mata Kuliah Per Program Studi",
+            alignment = "center",
+            area = "area0"
+          ),
+          grid_card(
+            area = "area1",
+            plotlyOutput(
+              outputId = "MatkulPerProdi",
+              width = "100%",
+              height = "400px"
+            )
+          )
         )
       )
     )
