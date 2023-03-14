@@ -164,7 +164,11 @@ from ruangan as r,fakultas as f
 where r.kode_fk=f.kode_fk
 group by f.nama_fk,f.kode_fk
 order by f.kode_fk;")
-    plotruangfak <- plot_ly(x=ruangFak$nama_fk,y=ruangFak$jumlah_ruangan,type="bar")
+    xprodiFak <- list(categoryorder = "array",
+                      categoryarray = ruangFak$nama_fk)
+    plotruangfak <- plot_ly(x=ruangFak$nama_fk,y=ruangFak$jumlah_ruangan,type="bar") %>%
+      layout(title = "",
+             xaxis = xprodiFak)
     dbDisconnect(DB)
     plotruangfak
   })
@@ -174,6 +178,7 @@ order by f.kode_fk;")
     ruangHari <- dbGetQuery(DB,"select hari, count(*) as jumlah_jadwal
 from jadwal_kuliah
 group by hari;")
+    ruangHari$hari <- ordered(ruangHari$hari,c("Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"))
     plotruangHari <- plot_ly(x=ruangHari$hari,y=ruangHari$jumlah_jadwal,type="bar")
     dbDisconnect(DB)
     plotruangHari
@@ -194,7 +199,11 @@ order by kode_prodi;")
   output$ProdiPerFak <- renderPlotly({
     DB <- connectDB()
     prodiFak <- dbGetQuery(DB,"SELECT * FROM fakultas;")
-    plotprodiFak <- plot_ly(x=prodiFak$nama_fk,y=prodiFak$jmlh_prodi,type="bar")
+    xprodiFak <- list(categoryorder = "array",
+                  categoryarray = prodiFak$nama_fk)
+    plotprodiFak <- plot_ly(x=prodiFak$nama_fk,y=prodiFak$jmlh_prodi,type="bar") %>%
+      layout(title = "",
+             xaxis = xprodiFak)
     dbDisconnect(DB)
     plotprodiFak
   })
