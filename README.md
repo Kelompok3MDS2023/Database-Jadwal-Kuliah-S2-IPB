@@ -93,7 +93,7 @@ Menampilkan informasi mata kuliah apa saja yang tersedia.
 ## 📹 Demo
 | url                      | login          |
 | ------------------------ | -------------- |
-|[ http://shinyapps.io/hospital ](https://merryanty.shinyapps.io/Ruangan-IPB/)| merryantylestari9@gmail.com |
+|[ https://merryanty.shinyapps.io/Ruangan-IPB/ ](https://merryanty.shinyapps.io/Ruangan-IPB/)| merryantylestari9@gmail.com |
 
 
 
