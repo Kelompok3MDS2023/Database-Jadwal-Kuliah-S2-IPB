@@ -157,12 +157,46 @@ function(input, output) {
     output_mk
   })
   
-  output$ProdiPerFak <- renderPlot({
+  output$RuanganPerFak <- renderPlotly({
+    DB <- connectDB()
+    ruangFak <- dbGetQuery(DB,"select f.kode_fk,f.nama_fk,COUNT(*) as Jumlah_ruangan
+from ruangan as r,fakultas as f
+where r.kode_fk=f.kode_fk
+group by f.nama_fk,f.kode_fk
+order by f.kode_fk;")
+    plotruangfak <- plot_ly(x=ruangFak$nama_fk,y=ruangFak$jumlah_ruangan,type="bar")
+    dbDisconnect(DB)
+    plotruangfak
+  })
+  
+  output$RuanganPerHari <- renderPlotly({
+    DB <- connectDB()
+    ruangHari <- dbGetQuery(DB,"select hari, count(*) as jumlah_jadwal
+from jadwal_kuliah
+group by hari;")
+    plotruangHari <- plot_ly(x=ruangHari$hari,y=ruangHari$jumlah_jadwal,type="bar")
+    dbDisconnect(DB)
+    plotruangHari
+  })
+
+  output$MatkulPerProdi <- renderPlotly({
+    DB <- connectDB()
+    matkulProdi <- dbGetQuery(DB,"select pr.kode_prodi, count(*) as jumlah_matkul
+from prodi as pr,mata_kuliah as mk
+where pr.kode_prodi=mk.kode_prodi
+group by pr.kode_prodi
+order by kode_prodi;")
+    plotmatkulProdi <- plot_ly(x=matkulProdi$kode_prodi,y=matkulProdi$jumlah_matkul,type="bar")
+    dbDisconnect(DB)
+    plotmatkulProdi
+  })
+  
+  output$ProdiPerFak <- renderPlotly({
     DB <- connectDB()
     prodiFak <- dbGetQuery(DB,"SELECT * FROM fakultas;")
-    prodiFak <- as.data.frame(prodiFak)
-    plot_prodiFak <- barplot(prodiFak$jmlh_prodi,names.arg=prodiFak$nama_fk,xlab="Fakultas",ylab="Jumlah Prodi",col="blue",
-                             main="Jumlah Prodi per Fakultas",border="red")
+    plotprodiFak <- plot_ly(x=prodiFak$nama_fk,y=prodiFak$jmlh_prodi,type="bar")
+    dbDisconnect(DB)
+    plotprodiFak
   })
   
   
