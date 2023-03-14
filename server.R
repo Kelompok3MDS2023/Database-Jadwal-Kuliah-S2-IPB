@@ -78,7 +78,7 @@ function(input, output) {
     output_rg <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_rg
-  })
+  },options = list(pageLength = 15))
   
   #TAB JADWAL
   output$tblJadwal <- renderDataTable({
@@ -109,7 +109,7 @@ function(input, output) {
     output_jadwal <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_jadwal
-  })
+  },options = list(pageLength = 15))
   
   #TAB MATKUL
   output$tblMatkul <- renderDataTable({
@@ -125,7 +125,7 @@ function(input, output) {
     output_mk <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_mk
-  })
+  },options = list(pageLength = 15))
   
   #Tab Cari Kelas
   output$tblKelas <- renderDataTable({
