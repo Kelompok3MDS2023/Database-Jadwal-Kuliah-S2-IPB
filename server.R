@@ -1,30 +1,30 @@
 # Local database
-connectDB <- function(){
-  driver <- dbDriver('PostgreSQL')
-  
-  DB <- dbConnect(
-    driver, 
-    dbname="ruangan-IPB", 
-    host="localhost",
-    port=5432,
-    user="postgres",
-    password="root"
-  )
-}
-
-   
-# 1. set connection to ElephantSQL server database
 # connectDB <- function(){
 #   driver <- dbDriver('PostgreSQL')
+# 
 #   DB <- dbConnect(
 #     driver,
-#     dbname="srsttvfb", # User & Default database
-#     host="topsy.db.elephantsql.com", # Server
-#     # port=5433,
-#     user="srsttvfb", # User & Default database
-#     password="TLaAq8YtYIw6OXrnpcJRERsgE6MspeOn" # Password
+#     dbname="ruangan-IPB",
+#     host="localhost",
+#     port=5432,
+#     user="postgres",
+#     password="root"
 #   )
-#}
+# }
+
+
+#1. set connection to ElephantSQL server database
+connectDB <- function(){
+  driver <- dbDriver('PostgreSQL')
+  DB <- dbConnect(
+      driver,
+      dbname="srsttvfb", # User & Default database
+      host="topsy.db.elephantsql.com", # Server
+      # port=5433,
+      user="srsttvfb", # User & Default database
+      password="TLaAq8YtYIw6OXrnpcJRERsgE6MspeOn" # Password
+   )
+}
 
 
 function(input, output) {
@@ -78,7 +78,7 @@ function(input, output) {
     output_rg <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_rg
-  },options = list(pageLength = 15))
+  })
   
   #TAB JADWAL
   output$tblJadwal <- renderDataTable({
@@ -109,7 +109,7 @@ function(input, output) {
     output_jadwal <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_jadwal
-  },options = list(pageLength = 15))
+  })
   
   #TAB MATKUL
   output$tblMatkul <- renderDataTable({
@@ -125,7 +125,7 @@ function(input, output) {
     output_mk <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_mk
-  },options = list(pageLength = 15))
+  })
   
   #Tab Cari Kelas
   output$tblKelas <- renderDataTable({
@@ -157,48 +157,13 @@ function(input, output) {
     output_mk
   })
   
-  output$RuanganPerFak <- renderPlotly({
-    DB <- connectDB()
-    ruangFak <- dbGetQuery(DB,"select f.kode_fk,f.nama_fk,COUNT(*) as Jumlah_ruangan
-from ruangan as r,fakultas as f
-where r.kode_fk=f.kode_fk
-group by f.nama_fk,f.kode_fk
-order by f.kode_fk;")
-    plotruangfak <- plot_ly(x=ruangFak$nama_fk,y=ruangFak$jumlah_ruangan,type="bar")
-    dbDisconnect(DB)
-    plotruangfak
-  })
-  
-  output$RuanganPerHari <- renderPlotly({
-    DB <- connectDB()
-    ruangHari <- dbGetQuery(DB,"select hari, count(*) as jumlah_jadwal
-from jadwal_kuliah
-group by hari;")
-    plotruangHari <- plot_ly(x=ruangHari$hari,y=ruangHari$jumlah_jadwal,type="bar")
-    dbDisconnect(DB)
-    plotruangHari
-  })
-
-  output$MatkulPerProdi <- renderPlotly({
-    DB <- connectDB()
-    matkulProdi <- dbGetQuery(DB,"select pr.kode_prodi, count(*) as jumlah_matkul
-from prodi as pr,mata_kuliah as mk
-where pr.kode_prodi=mk.kode_prodi
-group by pr.kode_prodi
-order by kode_prodi;")
-    plotmatkulProdi <- plot_ly(x=matkulProdi$kode_prodi,y=matkulProdi$jumlah_matkul,type="bar")
-    dbDisconnect(DB)
-    plotmatkulProdi
-  })
-  
-  output$ProdiPerFak <- renderPlotly({
+  output$ProdiPerFak <- renderPlot({
     DB <- connectDB()
     prodiFak <- dbGetQuery(DB,"SELECT * FROM fakultas;")
-    plotprodiFak <- plot_ly(x=prodiFak$nama_fk,y=prodiFak$jmlh_prodi,type="bar")
+    prodiFak <- as.data.frame(prodiFak)
+    plot_prodiFak <- barplot(prodiFak$jmlh_prodi,names.arg=prodiFak$nama_fk,xlab="Fakultas",ylab="Jumlah Prodi",col="blue",
+                             main="Jumlah Prodi per Fakultas",border="red")
     dbDisconnect(DB)
-    plotprodiFak
   })
-  
-  
-  
+
 }
