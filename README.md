@@ -45,7 +45,10 @@ Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen databa
 
 Menampilkan tampilan awal pada Rshinny Database.
 
-<img width="960" alt="Tampilan Summary Database" src="https://user-images.githubusercontent.com/111562803/224893563-295a01b0-d86c-49b4-ba32-ffc48c5d178d.png">
+<img width="960" alt="Tampilan Sebaran Prodi" src="https://user-images.githubusercontent.com/111562803/224901355-39a88ead-1015-4154-add5-ff28715bc83b.png">
+<img width="960" alt="tampilan sebaran ruangan" src="https://user-images.githubusercontent.com/111562803/224901475-e2613290-c08f-4c53-81bc-96ddd4f4bb6d.png">
+<img width="960" alt="tampilan sebaran kuliah per hari" src="https://user-images.githubusercontent.com/111562803/224901604-63c9ed08-b10d-46a3-abf6-ce01a7d7c593.png">
+<img width="953" alt="tampilan jumlah matkul" src="https://user-images.githubusercontent.com/111562803/224901515-23347b2f-033b-4c0d-a0a0-2fd265af8804.png">
 
 
 2️⃣ Fakultas
@@ -59,28 +62,32 @@ Menampilkan informasi daftar fakultas apa saja yang tersedia.
 
 Menampilkan informasi daftar program studi apa saja yang tersedia.
 
-<img width="959" alt="Tampilan Daftar Prodi" src="https://user-images.githubusercontent.com/111562803/224893620-a83aed9a-76e1-4368-bb94-2a1995f51e52.png">
+<img width="957" alt="daftar prodi" src="https://user-images.githubusercontent.com/111562803/224901895-97ffcd89-f5fd-4dc6-b50a-79b721d2df0d.png">
+
 
 
 4️⃣ Ruangan
 
 Menampilkan informasi tentang ruangan apa saja yang tersedia.
 
-<img width="959" alt="Tampilan Daftar Ruangan" src="https://user-images.githubusercontent.com/111562803/224893639-177d8e08-2728-4dfd-9f84-ca653e57e8cb.png">
+<img width="960" alt="daftar ruangan" src="https://user-images.githubusercontent.com/111562803/224901973-90846704-0da8-43ce-95cb-34f4b2d61a8d.png">
+
 
 
 5️⃣ Jadwal Kuliah
 
 Menampilkan informasi jadwal kuliah apa saja yang tersedia.
 
-<img width="959" alt="Tampilan Jadwal Kuliah" src="https://user-images.githubusercontent.com/111562803/224893653-7b801684-79a5-4b5c-b5d0-a917bd8cd8f5.png">
+<img width="958" alt="jadwal kuliah" src="https://user-images.githubusercontent.com/111562803/224902031-33e6f031-88e0-46f4-853c-a3a93dd29975.png">
+
 
 
 6️⃣ Mata Kuliah
 
 Menampilkan informasi mata kuliah apa saja yang tersedia.
 
-<img width="957" alt="Tampilan Daftar Mata Kuliah" src="https://user-images.githubusercontent.com/111562803/224893672-cd5b4859-1a3f-4d98-9ebc-ec413c6b4789.png">
+<img width="960" alt="daftar matkul" src="https://user-images.githubusercontent.com/111562803/224902098-394fae8e-26be-4c75-af6d-27a0a66e19df.png">
+
 
 
 ## 📹 Demo
@@ -96,7 +103,8 @@ Menampilkan informasi mata kuliah apa saja yang tersedia.
 
 Menampilkan contoh pencarian ruang kelas STA1541 maka akan muncul nama mata kuliah, jam, hari, serta lokasi ruangan tersebut.
 
-<img width="958" alt="Tampilan Contoh Pencarian" src="https://user-images.githubusercontent.com/111562803/224893690-216fe953-f6f0-4c0c-a9e1-6cd3bf714317.png">
+<img width="960" alt="contoh" src="https://user-images.githubusercontent.com/111562803/224902166-a892125e-1668-4f9f-a29e-75b272066b71.png">
+
 
 ## ❗ Requirements
 
