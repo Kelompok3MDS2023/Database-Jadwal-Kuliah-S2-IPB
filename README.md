@@ -36,9 +36,52 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 ## 📸 Screenshot
 <div align="justify">
 R-Shiny pada dasarnya merupakan sebuah framework (kerangka kerja) yang ditawarkan oleh RStudio. Dengan menggunakan R-Shiny dapat membuat laporan dan visualisasi data yang efektif sehingga eksplorasi data pun lebih mudah. Selain itu, RStudio juga menyediakan elemen Shiny yang memungkinkan Anda menggunakan elemen HTML untuk mendesain konten yang ada dalam aplikasi.
+
  
 Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen database Ruang di IPB, yang bertujuan untuk menampilkan serta memberikan informasi mengenai ruangan belajar.
 </div>
+
+1️⃣ Summary Database
+
+Menampilkan tampilan awal pada Rshinny Database.
+
+<img width="960" alt="Tampilan Summary Database" src="https://user-images.githubusercontent.com/111562803/224893563-295a01b0-d86c-49b4-ba32-ffc48c5d178d.png">
+
+
+2️⃣ Fakultas
+
+Menampilkan informasi daftar fakultas apa saja yang tersedia.
+
+<img width="959" alt="Tampilan Daftar Fakultas" src="https://user-images.githubusercontent.com/111562803/224893596-e96b1a11-c462-467c-9c80-59e6a3dfc95c.png">
+
+
+3️⃣ Program Studi
+
+Menampilkan informasi daftar program studi apa saja yang tersedia.
+
+<img width="959" alt="Tampilan Daftar Prodi" src="https://user-images.githubusercontent.com/111562803/224893620-a83aed9a-76e1-4368-bb94-2a1995f51e52.png">
+
+
+4️⃣ Ruangan
+
+Menampilkan informasi tentang ruangan apa saja yang tersedia.
+
+<img width="959" alt="Tampilan Daftar Ruangan" src="https://user-images.githubusercontent.com/111562803/224893639-177d8e08-2728-4dfd-9f84-ca653e57e8cb.png">
+
+
+5️⃣ Jadwal Kuliah
+
+Menampilkan informasi jadwal kuliah apa saja yang tersedia.
+
+<img width="959" alt="Tampilan Jadwal Kuliah" src="https://user-images.githubusercontent.com/111562803/224893653-7b801684-79a5-4b5c-b5d0-a917bd8cd8f5.png">
+
+
+6️⃣ Mata Kuliah
+
+Menampilkan informasi mata kuliah apa saja yang tersedia.
+
+<img width="957" alt="Tampilan Daftar Mata Kuliah" src="https://user-images.githubusercontent.com/111562803/224893672-cd5b4859-1a3f-4d98-9ebc-ec413c6b4789.png">
+
 
 ## 📹 Demo
 | url                      | login          |
@@ -48,6 +91,12 @@ Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen databa
 
 
 ## :blue_book: Dokumentasi 
+
+1️⃣ Contoh Mencari Ruang Kelas
+
+Menampilkan contoh pencarian ruang kelas STA1541 maka akan muncul nama mata kuliah, jam, hari, serta lokasi ruangan tersebut.
+
+<img width="958" alt="Tampilan Contoh Pencarian" src="https://user-images.githubusercontent.com/111562803/224893690-216fe953-f6f0-4c0c-a9e1-6cd3bf714317.png">
 
 ## ❗ Requirements
 
@@ -87,6 +136,7 @@ library(plotly)
 Tabel ini akan menyimpan data kode fakultas, nama fakultas, dan jumlah prodi yang nantinya akan dihubungkan dengan tabel ruangan untuk mengetahui lokasi ruangan berdasarkan fakultas.
 </div>
 
+
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
 | kode_fk       | character varying(2)  | Kode Fakultas                   |
@@ -113,6 +163,7 @@ CREATE TABLE public.fakultas
 <div align="justify">
 Tabel ini menyimpan data kode ruangan, nama ruangan, lokasi, kapasitas ruangan, dan kode fakultas. Tabel ini bertujuan untuk mengetahui lokasi suatu ruangan di IPB yang dicari berdasarkan jadwal kuliah dan kode ruangan.
 </div>
+
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -147,6 +198,7 @@ CREATE TABLE public.ruangan
 Tabel ini menyimpan data kode Program Studi, nama prodi, singkatan dan kode fakultas. Tabel ini bertujuan untuk memberikan informasi prodi apa saja yang nantinya akan dihubungkan dengan tabel fakultas. 
 </div>
 
+
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
 | kode_prodi    | character varying(25) | Kode Program Studi              |
@@ -178,6 +230,7 @@ CREATE TABLE public.prodi
 <div align="justify">
 Tabel ini menyimpan data kode mata kuliah, jenis kelas, hari, jam, dan kode ruangan. Tabel ini bertujuan untuk memberikan informasi jadwal kuliah beserta lokasi dan fakultas ruangan sehingga memudahkan mahasiswa dalam mencari ruangan belajar.
 </div>
+
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
@@ -218,6 +271,7 @@ CREATE TABLE public.jadwal_kuliah
 <div align="justify">
 Tabel ini menyimpan data kode mata kuliah, nama mata kuliah, dan semester mata kuliah. Tabel ini bertujuan untuk memberikan informasi mata kuliah yang nantinya akan dihubungkan dengan tabel jadwal kuliah.
 </div>
+
 
 | Attribute     | Type                  | Description                     |
 |:--------------|:----------------------|:--------------------------------|
