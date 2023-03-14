@@ -131,7 +131,7 @@ library(plotly)
 - Back End menggunakan RShiny Server
 
 ## :computer: Skema Database
-<img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
+<img width="281" alt="Update Skema" src="https://user-images.githubusercontent.com/111562803/225068929-aa34643d-81fe-40ec-8253-0053a6f2c612.png">
 
 ## :memo: Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
