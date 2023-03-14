@@ -4,28 +4,28 @@
 
 # Data Base Ruangan IPB
 
-• [Tentang Data Base Ruangan IPB](#tentang-data-base-ruangan-ipb)
+• [Tentang Data Base Ruangan IPB](#memo-tentang-data-base-ruangan-ipb)
 • [Screenshot](#camera_flash-screenshot)
 • [Demo](#video_camera-demo)
-• [Dokumentasi](#blue_book-documentation)
+• [Dokumentasi](#blue_book-dokumentasi)
 
 </div>
 
 ## :bookmark_tabs: Main Menu
 
-- [Tentang Data Base Ruangan IPB](#tentang-data-base-ruangan-ipb)
-- [Screenshot](##screenshot)
-- [Demo](#demo)
-- [Dokumentasi](#documentation)
-- [Requirements](#requirements)
-- [Skema Database](#💻-Skema-Database)
-- [Entity Relationship Diagram](#📝-Entity-Relationship-Diagram)
-- [Deskripsi Data](#🔎-Deskripsi-Data)
-- [Struktur Folder](#open_file_folder-Stuktur-Folder)
+- [Tentang Data Base Ruangan IPB](#memo-tentang-data-base-ruangan-ipb)
+- [Screenshot](#camera_flash-screenshot)
+- [Demo](#video_camera-demo)
+- [Dokumentasi](#blue_book-dokumentasi)
+- [Requirements](#video_camera-requirements)
+- [Skema Database](#computer-skema-database)
+- [Entity Relationship Diagram](#memo-entity-relationship-diagram)
+- [Deskripsi Data](#pencil-deskripsi-data)
+- [Struktur Folder](#open_file_folder-struktur-folder)
 - [Anggota Tim Pengembang](#fireworks-anggota-tim-pengembang)
 
 
-## Tentang Data Base Ruangan IPB 
+## :memo: Tentang Data Base Ruangan IPB 
 Deskripsi Database Ruangan IPB
 
 <div align="justify">
@@ -33,7 +33,7 @@ Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar 
 
 </div>
 
-## 📸 Screenshot
+## :camera_flash: Screenshot
 <div align="justify">
 R-Shiny pada dasarnya merupakan sebuah framework (kerangka kerja) yang ditawarkan oleh RStudio. Dengan menggunakan R-Shiny dapat membuat laporan dan visualisasi data yang efektif sehingga eksplorasi data pun lebih mudah. Selain itu, RStudio juga menyediakan elemen Shiny yang memungkinkan Anda menggunakan elemen HTML untuk mendesain konten yang ada dalam aplikasi.
 
@@ -90,7 +90,7 @@ Menampilkan informasi mata kuliah apa saja yang tersedia.
 
 
 
-## 📹 Demo
+## :video_camera: Demo
 | url                      | login          |
 | ------------------------ | -------------- |
 |[ https://merryanty.shinyapps.io/Ruangan-IPB/ ](https://merryanty.shinyapps.io/Ruangan-IPB/)| merryantylestari9@gmail.com |
@@ -106,7 +106,7 @@ Menampilkan contoh pencarian ruang kelas STA1541 maka akan muncul nama mata kuli
 <img width="960" alt="contoh" src="https://user-images.githubusercontent.com/111562803/224902166-a892125e-1668-4f9f-a29e-75b272066b71.png">
 
 
-## ❗ Requirements
+## :video_camera: Requirements
 
 - Paket R yang digunakan:
 
@@ -130,13 +130,13 @@ library(plotly)
 - Front End menggunakan RShiny UI
 - Back End menggunakan RShiny Server
 
-## 💻 Skema Database
+## :computer: Skema Database
 <img width="242" alt="skema update" src="https://user-images.githubusercontent.com/111562803/223139863-0f7b7950-6586-49aa-9e6c-5c756d2a0375.png">
 
-## 📝 Entity Relationship Diagram
+## :memo: Entity Relationship Diagram
 ![ERD terbaru](https://user-images.githubusercontent.com/111562803/224460185-a02c22fb-ff99-4d24-beb9-61a97790e629.jpeg)
 
-## 🔎 Deskripsi Data
+## :pencil: Deskripsi Data
 ### Sintax Rancangan Database
 
 1️⃣ Tabel Fakultas
@@ -330,7 +330,7 @@ CREATE TABLE public.mata_kuliah
 ```
 
 
-## 🎇 Anggota Tim Pengembang
+## :fireworks: Anggota Tim Pengembang
 1. Merryanty Lestari P (G1501221022) : Data Manager
 2. Ahmad Syauqi        (G1501221019) : Shiny Developer (back-end)
 3. Yully Sofyah Waode  (G1501222056) : Shiny Developer (front-end)
