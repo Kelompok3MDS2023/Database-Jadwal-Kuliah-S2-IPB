@@ -13,11 +13,11 @@
 
 ## :bookmark_tabs: Main Menu
 
-- [Tentang Data Base Ruangan IPB](#📈-Tentang-Data-Base-Ruangan-IPB)
-- [Screenshot](##📸_scene-Screenshot)
-- [Demo](#📹-Demo)
-- [Dokumentasi](#blue_book-documentation)
-- [Requirements](#❗-Requirements)
+- [Tentang Data Base Ruangan IPB](#tentang-data-base-ruangan-ipb)
+- [Screenshot](##screenshot)
+- [Demo](#demo)
+- [Dokumentasi](#documentation)
+- [Requirements](#requirements)
 - [Skema Database](#💻-Skema-Database)
 - [Entity Relationship Diagram](#📝-Entity-Relationship-Diagram)
 - [Deskripsi Data](#🔎-Deskripsi-Data)
