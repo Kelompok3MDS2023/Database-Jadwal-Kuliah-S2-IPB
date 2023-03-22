@@ -2,9 +2,9 @@
 
 ![Logo IPB](https://user-images.githubusercontent.com/111562803/224660545-5b54692d-4e5f-4827-9aa6-85d4eeb83fd3.png)
 
-# Data Base Ruangan IPB
+# Data Base Jadwal Kuliah S2 IPB
 
-• [Tentang Data Base Ruangan IPB](#memo-tentang-data-base-ruangan-ipb)
+• [Tentang Data Base Jadwal Kuliah IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
 • [Screenshot](#camera_flash-screenshot)
 • [Demo](#video_camera-demo)
 • [Dokumentasi](#blue_book-dokumentasi)
@@ -13,7 +13,7 @@
 
 ## :bookmark_tabs: Main Menu
 
-- [Tentang Data Base Ruangan IPB](#memo-tentang-data-base-ruangan-ipb)
+- [Tentang Data Base Jadwal Kuliah S2 IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
 - [Screenshot](#camera_flash-screenshot)
 - [Demo](#video_camera-demo)
 - [Dokumentasi](#blue_book-dokumentasi)
@@ -25,8 +25,8 @@
 - [Anggota Tim Pengembang](#fireworks-anggota-tim-pengembang)
 
 
-## :memo: Tentang Data Base Ruangan IPB 
-Deskripsi Database Ruangan IPB
+## :memo: Tentang Data Base Jadwal Kuliah S2 IPB 
+Deskripsi Database Jadwal Kuliah S2 IPB
 
 <div align="justify">
 Database ini bertujuan untuk memudahkan mahasiswa dalam mencari ruangan belajar sesuai dengan jadwal dan mata kuliah yang telah ada. Informasi yang diberikan berupa jadwal kuliah, mata kuliah, posisi lokasi ruangan dan fakultas. Database terdiri dari beberapa tabel yaitu Tabel Fakultas, Ruangan, Jadwal Kuliah, dan Mata Kuliah.
