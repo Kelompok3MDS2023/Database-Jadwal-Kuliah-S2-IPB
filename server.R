@@ -32,10 +32,12 @@ function(input, output) {
   output$tblFak <- renderDataTable({
     DB <- connectDB()
     q <- "SELECT 
+      kode_fk as Kode_Fakultas,
       nama_fk as Nama_Fakultas,
       jmlh_prodi as Jumlah_Prodi 
       
-      FROM fakultas;"
+      FROM fakultas
+      WHERE jmlh_prodi > 0;"
     output_fak <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_fak
@@ -46,7 +48,7 @@ function(input, output) {
     DB <- connectDB()
     q <- paste0("SELECT 
                 kode_prodi,
-                nama_prodi as Program_Studi,
+                nama_prodi as nama_Program_Studi,
                 singkatan
                 
                 FROM 
@@ -94,7 +96,6 @@ function(input, output) {
                 lokasi
                 
                 FROM 
-                fakultas as F, 
                 mata_kuliah as MK, 
                 jadwal_kuliah as JK, 
                 ruangan as R, 
@@ -102,10 +103,9 @@ function(input, output) {
                 
                 WHERE 
                 JK.kode_mk=MK.kode_mk 
-                AND r.kode_fk=f.kode_fk 
                 AND JK.kode_rg=R.kode_rg 
 				AND Pr.kode_prodi=MK.kode_prodi
-                AND nama_prodi='", input$listProdi_Jadwal,"';")
+                AND nama_prodi='", substr(input$listProdi_Jadwal,8,100),"';")
     output_jadwal <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_jadwal
@@ -121,7 +121,7 @@ function(input, output) {
                 
                 FROM mata_kuliah as mk,prodi as pr
                 WHERE mk.kode_prodi =pr.kode_prodi
-				AND nama_prodi='", input$listProdi_matkul,"';")
+				AND nama_prodi='", substr(input$listProdi_matkul,8,100),"';")
     output_mk <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_mk
@@ -140,7 +140,6 @@ function(input, output) {
                 lokasi
                 
                 FROM 
-                fakultas as F, 
                 mata_kuliah as MK, 
                 jadwal_kuliah as JK, 
                 ruangan as R, 
@@ -148,10 +147,9 @@ function(input, output) {
                 
                 WHERE 
                 JK.kode_mk=MK.kode_mk 
-                AND r.kode_fk=f.kode_fk 
                 AND JK.kode_rg=R.kode_rg 
 				AND Pr.kode_prodi=MK.kode_prodi
-                AND mk.kode_mk='", input$listMatkul,"';")
+                AND mk.kode_mk='", substr(input$listMatkul,1,7),"';")
     output_mk <- dbGetQuery(DB, q)
     dbDisconnect(DB)
     output_mk
@@ -186,7 +184,7 @@ group by hari;")
 
   output$MatkulPerProdi <- renderPlotly({
     DB <- connectDB()
-    matkulProdi <- dbGetQuery(DB,"select pr.kode_prodi, count(*) as jumlah_matkul
+    matkulProdi <- dbGetQuery(DB,"select concat(pr.kode_prodi,' - ',pr.singkatan) as kode_prodi, count(*) as jumlah_matkul
 from prodi as pr,mata_kuliah as mk
 where pr.kode_prodi=mk.kode_prodi
 group by pr.kode_prodi
@@ -198,7 +196,9 @@ order by kode_prodi;")
   
   output$ProdiPerFak <- renderPlotly({
     DB <- connectDB()
-    prodiFak <- dbGetQuery(DB,"SELECT * FROM fakultas;")
+    prodiFak <- dbGetQuery(DB,"SELECT * 
+                           FROM fakultas
+                           WHERE jmlh_prodi > 0;")
     xprodiFak <- list(categoryorder = "array",
                   categoryarray = prodiFak$nama_fk)
     plotprodiFak <- plot_ly(x=prodiFak$nama_fk,y=prodiFak$jmlh_prodi,type="bar") %>%
@@ -207,7 +207,51 @@ order by kode_prodi;")
     dbDisconnect(DB)
     plotprodiFak
   })
+  DB <- connectDB()
+  
+  namaProdi <- dbGetQuery(DB,"select concat(kode_prodi,' - ', nama_prodi) as nama_prodi,
+                        nama_fk 
+                        from 
+                        prodi as pr,
+                        fakultas as f
+                        
+                        WHERE 
+                        pr.kode_fk=f.kode_fk
+                        ;")
+  
+  namaMatkul <- dbGetQuery(DB,"select concat(kode_mk,' - ',nama_mk) as kode_mk, 
+nama_prodi 
+from mata_kuliah as mk,prodi as pr
+where mk.kode_prodi=pr.kode_prodi;")
+  
+  dbDisconnect(DB)
   
   
+  observe({ updateSelectInput(getDefaultReactiveDomain(),
+                              inputId="listProdi_Jadwal", 
+                              choices=namaProdi[namaProdi$nama_fk == input$listFak_Jadwal,
+                                                           "nama_prodi"]
+  )
+  })
   
+  observe({ updateSelectInput(getDefaultReactiveDomain(),
+                              inputId="listProdi_matkul", 
+                              choices=namaProdi[namaProdi$nama_fk == input$listFak_matkul,
+                                                "nama_prodi"]
+  )
+  })
+  
+  observe({ updateSelectInput(getDefaultReactiveDomain(),
+                              inputId="listProdi_Kelas", 
+                              choices=namaProdi[namaProdi$nama_fk == input$listFak_Kelas,
+                                                "nama_prodi"]
+  )
+  })
+  
+  observe({ updateSelectInput(getDefaultReactiveDomain(),
+                              inputId="listMatkul", 
+                              choices=namaMatkul[namaMatkul$nama_prodi == substr(input$listProdi_Kelas,8,100),
+                                                "kode_mk"]
+  )
+  })
 }
