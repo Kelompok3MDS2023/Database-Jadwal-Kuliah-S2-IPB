@@ -6,6 +6,8 @@ library(DBI)
 library(bslib)
 library(gridlayout)
 library(plotly)
+library(tidyverse)
+library(shinythemes)
 
 # Local database
 # connectDB <- function(){
@@ -36,21 +38,79 @@ connectDB <- function(){
 }
 
 DB <- connectDB()
-namaFak <- dbGetQuery(DB,"select nama_fk from fakultas;")
+namaFak <- dbGetQuery(DB,"select nama_fk from fakultas where jmlh_prodi>0;")
 listFak <- namaFak$nama_fk
 
-namaProdi <- dbGetQuery(DB,"select nama_prodi from prodi;")
+namaFak2 <- dbGetQuery(DB,"select nama_fk from fakultas;")
+listFak2 <- namaFak2$nama_fk
+
+namaProdi <- dbGetQuery(DB,"select concat(kode_prodi,' - ', nama_prodi) as nama_prodi,
+                        nama_fk 
+                        from 
+                        prodi as pr,
+                        fakultas as f
+                        
+                        WHERE 
+                        pr.kode_fk=f.kode_fk
+                        ;")
 listProdi <- namaProdi$nama_prodi
 
-namaMatkul <- dbGetQuery(DB,"select kode_mk from mata_kuliah;")
+namaMatkul <- dbGetQuery(DB,"select concat(kode_mk,' - ',nama_mk) as kode_mk, 
+nama_prodi 
+from mata_kuliah as mk,prodi as pr
+where mk.kode_prodi=pr.kode_prodi;")
+
 listMatkul <- namaMatkul$kode_mk
+dbDisconnect(DB)
 
 navbarPage(
   title = "Database Jadwal Kuliah S2 IPB",
-  selected = "Summary Database",
+  selected = "About",
   collapsible = TRUE,
-  theme = bslib::bs_theme(version = 5, bootswatch = "minty"),
-  
+  theme = shinytheme("flatly"),
+  tabPanel(
+    title = "About",
+    grid_container(
+      layout = c(
+        "area0 area0",
+        "area1 area1",
+        "area2 area2"
+      ),
+      row_sizes = c(
+        "0.51fr",
+        "1.25fr",
+        "1.24fr"
+      ),
+      col_sizes = c(
+        "1fr",
+        "1fr"
+      ),
+      gap_size = "10px",
+      grid_card_text(
+        content = "Tentang Database Jadwal Kuliah S2 IPB",
+        alignment = "center",
+        area = "area0"
+      ),
+      grid_card(
+        area = "area1",
+        card_header(strong("Deskripsi")),
+        card_body_fill(
+          "Database ini bertujuan untuk mempermudah mahasiswa S2 IPB University dalam mengetahui daftar fakultas, program studi, mata kuliah dan jadwal kuliah beserta lokasi ruangan kelas yang tersedia di Pascasarjana IPB.
+          Mata kuliah yang ditampilkan pada database ini hanya mata kuliah pada semester genap tahun akademik 2022/2023."
+        )
+      ),
+      grid_card(
+        area = "area2",
+        card_header(strong("Anggota Tim Pengembang")),
+        card_body_fill(
+          span("1. Merryanty Lestari P (G1501221022) : Data Manager"),
+          span("2. Ahmad Syauqi (G1501221019) : Project Leader & Shiny Developer (back-end)"),
+          span("3. Yully Sofyah Waode (G1501222056) : Shiny Developer (front-end)"),
+          span("4. Nadira Nisa Alwani (G1501222048) : Technical Writer")
+        )
+      )
+    )
+  ),
   tabPanel(
     title = "Summary Database",
     tabsetPanel(
@@ -231,11 +291,14 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        selectInput(
+        card_body_fill(
+          selectInput(
           inputId = "listFak_prodi",
           label = "Fakultas",
           choices = listFak
         )
+        )
+        
       ),
       grid_card(
         area = "area2",
@@ -266,11 +329,14 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        selectInput(
+        card_body_fill(
+          selectInput(
           inputId = "listFak_ruang",
           label = "Gedung",
-          choices = listFak
+          choices = listFak2
         )
+        )
+        
       ),
       grid_card(
         area = "area2",
@@ -301,11 +367,19 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
+        card_body_fill(
+          selectInput(
+          inputId = "listFak_Jadwal",
+          label = "Fakultas",
+          choices = listFak
+        ),
         selectInput(
           inputId = "listProdi_Jadwal",
           label = "Program Studi",
           choices = listProdi
         )
+        )
+        
       ),
       grid_card(
         area = "area2",
@@ -336,11 +410,19 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        selectInput(
+        card_body_fill(
+          selectInput(
+            inputId = "listFak_matkul",
+            label = "Fakultas",
+            choices = listFak
+          ),
+          selectInput(
           inputId = "listProdi_matkul",
           label = "Program Studi",
           choices = listProdi
         )
+        )
+        
       ),
       grid_card(
         area = "area2",
@@ -373,11 +455,24 @@ navbarPage(
       ),
       grid_card(
         area = "area1",
-        selectInput(
+        card_body_fill(
+          selectInput(
+            inputId = "listFak_Kelas",
+            label = "Fakultas",
+            choices = listFak
+          ),
+          selectInput(
+            inputId = "listProdi_Kelas",
+            label = "Program Studi",
+            choices = listProdi
+          ),
+          selectInput(
           inputId = "listMatkul",
           label = "Mata Kuliah",
           choices = listMatkul
         )
+        )
+        
       ),
       grid_card(
         area = "area3",
