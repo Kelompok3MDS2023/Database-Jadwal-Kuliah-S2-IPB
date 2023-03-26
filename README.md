@@ -1,6 +1,7 @@
 <div align="center">
+ 
+![logo ipb](https://user-images.githubusercontent.com/111562803/227765788-f0509533-f28e-48da-a492-ac6eed3c9779.png)
 
-![Logo IPB](https://user-images.githubusercontent.com/111562803/224660545-5b54692d-4e5f-4827-9aa6-85d4eeb83fd3.png)
 
 # Data Base Jadwal Kuliah S2 IPB
 
