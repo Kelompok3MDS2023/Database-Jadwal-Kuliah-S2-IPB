@@ -111,7 +111,7 @@ Menampilkan informasi mata kuliah pada tiap program studi.
 
 1️⃣ Contoh Mencari Ruang Kelas
 
-Menampilkan contoh pencarian ruang kelas STA1541 maka akan muncul nama mata kuliah, jam, hari, serta lokasi ruangan tersebut.
+Menampilkan contoh pencarian ruang kelas STA maka akan muncul kode mata kuliah, nama mata kuliah, jenis kelas, hari, jam, nama ruangan, serta lokasi ruangan tersebut.
 
 <img width="960" alt="Contoh Mencari Ruang Kelas" src="https://user-images.githubusercontent.com/111562803/227762068-1f23813b-b5b0-4276-864c-e26a5529df4b.png">
 
