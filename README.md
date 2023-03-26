@@ -48,19 +48,19 @@ Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen databa
 Menampilkan summary Database berupa visualisasi grafik pada Database yang tersedia.
 
 
-Tentang Database
+- Tentang Database
 <img width="958" alt="about" src="https://user-images.githubusercontent.com/111562803/227761926-48358bd3-faad-46c4-9bd7-03c36d5f7b10.png">
 
-Sebaran Program Studi S2 Per Fakultas
+- Sebaran Program Studi S2 Per Fakultas
 <img width="959" alt="Summary-Sebaran Prodi" src="https://user-images.githubusercontent.com/111562803/227761900-5b0b82d2-d2ce-4fa2-bbe4-6bdeb7cdbac3.png">
 
-Sebaran Jumlah Ruangan Per Fakultas
+- Sebaran Jumlah Ruangan Per Fakultas
 <img width="958" alt="Summary-Sebaran Jumlah Ruangan" src="https://user-images.githubusercontent.com/111562803/227761908-fe1ed315-dbe0-4eb9-a4eb-723dd48fbe4a.png">
 
-Sebaran Jadwal Kuliah Per Hari
+- Sebaran Jadwal Kuliah Per Hari
 <img width="958" alt="Summary - Sebaran Jadwal Kuliah" src="https://user-images.githubusercontent.com/111562803/227761918-a1d5c9f1-7c94-4dd6-b624-48c1d92da1eb.png">
 
-Sebaran Jumlah Mata Kuliah Per Program Studi
+- Sebaran Jumlah Mata Kuliah Per Program Studi
 <img width="959" alt="Summary - sebaran jumlah matkul" src="https://user-images.githubusercontent.com/111562803/227761919-b8595615-9251-4493-b9ae-b6259d9e40ef.png">
 
 
