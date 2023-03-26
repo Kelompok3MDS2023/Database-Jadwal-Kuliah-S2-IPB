@@ -3,9 +3,9 @@
 ![logo ipb](https://user-images.githubusercontent.com/111562803/227765788-f0509533-f28e-48da-a492-ac6eed3c9779.png)
 
 
-# Data Base Jadwal Kuliah S2 IPB
+# Database Jadwal Kuliah S2 IPB
 
-• [Tentang Data Base Jadwal Kuliah IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
+• [Tentang Database Jadwal Kuliah IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
 • [Screenshot](#camera_flash-screenshot)
 • [Demo](#video_camera-demo)
 • [Dokumentasi](#blue_book-dokumentasi)
@@ -14,7 +14,7 @@
 
 ## :bookmark_tabs: Main Menu
 
-- [Tentang Data Base Jadwal Kuliah S2 IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
+- [Tentang Database Jadwal Kuliah S2 IPB](#memo-tentang-data-base-jadwal-kuliah-s2-ipb)
 - [Screenshot](#camera_flash-screenshot)
 - [Demo](#video_camera-demo)
 - [Dokumentasi](#blue_book-dokumentasi)
@@ -26,7 +26,7 @@
 - [Anggota Tim Pengembang](#fireworks-anggota-tim-pengembang)
 
 
-## :memo: Tentang Data Base Jadwal Kuliah S2 IPB 
+## :memo: Tentang Database Jadwal Kuliah S2 IPB 
 Deskripsi Database Jadwal Kuliah S2 IPB
 
 <div align="justify">
