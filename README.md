@@ -45,24 +45,35 @@ Untuk mengaplikasikan R-Shinny dapat juga digunakan pada sistem manajemen databa
 
 Menampilkan summary Database berupa visualisasi grafik pada Database yang tersedia.
 
-<img width="960" alt="Tampilan Sebaran Prodi" src="https://user-images.githubusercontent.com/111562803/224901355-39a88ead-1015-4154-add5-ff28715bc83b.png">
-<img width="960" alt="tampilan sebaran ruangan" src="https://user-images.githubusercontent.com/111562803/224901475-e2613290-c08f-4c53-81bc-96ddd4f4bb6d.png">
-<img width="960" alt="tampilan sebaran kuliah per hari" src="https://user-images.githubusercontent.com/111562803/224901604-63c9ed08-b10d-46a3-abf6-ce01a7d7c593.png">
-<img width="953" alt="tampilan jumlah matkul" src="https://user-images.githubusercontent.com/111562803/224901515-23347b2f-033b-4c0d-a0a0-2fd265af8804.png">
+
+Tentang Database
+<img width="958" alt="about" src="https://user-images.githubusercontent.com/111562803/227761926-48358bd3-faad-46c4-9bd7-03c36d5f7b10.png">
+
+Sebaran Program Studi S2 Per Fakultas
+<img width="959" alt="Summary-Sebaran Prodi" src="https://user-images.githubusercontent.com/111562803/227761900-5b0b82d2-d2ce-4fa2-bbe4-6bdeb7cdbac3.png">
+
+Sebaran Jumlah Ruangan Per Fakultas
+<img width="958" alt="Summary-Sebaran Jumlah Ruangan" src="https://user-images.githubusercontent.com/111562803/227761908-fe1ed315-dbe0-4eb9-a4eb-723dd48fbe4a.png">
+
+Sebaran Jadwal Kuliah Per Hari
+<img width="958" alt="Summary - Sebaran Jadwal Kuliah" src="https://user-images.githubusercontent.com/111562803/227761918-a1d5c9f1-7c94-4dd6-b624-48c1d92da1eb.png">
+
+Sebaran Jumlah Mata Kuliah Per Program Studi
+<img width="959" alt="Summary - sebaran jumlah matkul" src="https://user-images.githubusercontent.com/111562803/227761919-b8595615-9251-4493-b9ae-b6259d9e40ef.png">
 
 
 2️⃣ Fakultas
 
 Menampilkan informasi daftar fakultas apa saja yang terdapat di IPB.
 
-<img width="959" alt="Tampilan Daftar Fakultas" src="https://user-images.githubusercontent.com/111562803/224893596-e96b1a11-c462-467c-9c80-59e6a3dfc95c.png">
+<img width="958" alt="Daftar Fakultas" src="https://user-images.githubusercontent.com/111562803/227761991-db5f624b-8a19-4eb0-aa09-e5218c1c9ab3.png">
 
 
 3️⃣ Program Studi
 
 Menampilkan informasi daftar program studi apa saja yang terdapat di IPB pada setiap fakultasnya.
 
-<img width="957" alt="daftar prodi" src="https://user-images.githubusercontent.com/111562803/224901895-97ffcd89-f5fd-4dc6-b50a-79b721d2df0d.png">
+<img width="960" alt="Daftar Prodi" src="https://user-images.githubusercontent.com/111562803/227762005-7681c7e0-b6e0-4be9-906b-7be908569026.png">
 
 
 
@@ -70,7 +81,7 @@ Menampilkan informasi daftar program studi apa saja yang terdapat di IPB pada se
 
 Menampilkan informasi tentang ruangan apa saja yang tersedia di IPB pada setiap gedung.
 
-<img width="960" alt="daftar ruangan" src="https://user-images.githubusercontent.com/111562803/224901973-90846704-0da8-43ce-95cb-34f4b2d61a8d.png">
+<img width="960" alt="Daftar Ruangan" src="https://user-images.githubusercontent.com/111562803/227762032-f3a3ba80-fea3-49f1-9c2f-1a84588c4ea4.png">
 
 
 
@@ -78,15 +89,14 @@ Menampilkan informasi tentang ruangan apa saja yang tersedia di IPB pada setiap 
 
 Menampilkan informasi jadwal kuliah pada tiap program studi.
 
-<img width="958" alt="jadwal kuliah" src="https://user-images.githubusercontent.com/111562803/224902031-33e6f031-88e0-46f4-853c-a3a93dd29975.png">
-
+<img width="960" alt="Daftar Jadwal Kuliah" src="https://user-images.githubusercontent.com/111562803/227762041-b6ae94ea-eb23-46f3-9f23-0c4a3a40e463.png">
 
 
 6️⃣ Mata Kuliah
 
 Menampilkan informasi mata kuliah pada tiap program studi.
 
-<img width="960" alt="daftar matkul" src="https://user-images.githubusercontent.com/111562803/224902098-394fae8e-26be-4c75-af6d-27a0a66e19df.png">
+<img width="960" alt="Daftar Mata Kuliah" src="https://user-images.githubusercontent.com/111562803/227762055-2bfb80e4-f223-455b-b830-532ec9f94113.png">
 
 
 
@@ -103,7 +113,7 @@ Menampilkan informasi mata kuliah pada tiap program studi.
 
 Menampilkan contoh pencarian ruang kelas STA1541 maka akan muncul nama mata kuliah, jam, hari, serta lokasi ruangan tersebut.
 
-<img width="960" alt="contoh" src="https://user-images.githubusercontent.com/111562803/224902166-a892125e-1668-4f9f-a29e-75b272066b71.png">
+<img width="960" alt="Contoh Mencari Ruang Kelas" src="https://user-images.githubusercontent.com/111562803/227762068-1f23813b-b5b0-4276-864c-e26a5529df4b.png">
 
 
 ## :video_camera: Requirements
